@@ -1,164 +1,572 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Contact Us - Cameron West Author</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <link href='custom.css' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
-    <!--
-			CSS
-			============================================= -->
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/mobile.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Cameron West, PhD</title>
+  <meta name="description" content="Contact Cameron West, PhD — author of First Person Plural: My Life as a Multiple.">
+  <link rel="shortcut icon" href="img/fav.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg:          #0A0A0A;
+      --color-surface:     #141210;
+      --color-border:      #2E2B28;
+      --color-text:        #F0EDE8;
+      --color-text-muted:  #D4C5B5;
+      --color-accent:      #C4805A;
+      --color-accent-dark: #8B6F5E;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Lora', Georgia, serif;
+      --font-label:   'Cinzel', serif;
+      --max-width: 1100px;
+      --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,10,0.97);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav-logo {
+      font-family: var(--font-label);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 1px;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--color-accent); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--color-text);
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 8rem var(--gutter) 4rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .page-eyebrow {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .page-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background: var(--color-accent);
+    }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .page-intro {
+      color: var(--color-text-muted);
+      max-width: 560px;
+      font-size: 1.05rem;
+      font-style: italic;
+    }
+
+    /* CONTACT LAYOUT */
+    .contact-main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: clamp(3rem, 8vw, 5rem) var(--gutter);
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info-label {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .contact-info-label::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background: var(--color-accent);
+    }
+    .contact-info h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+    .contact-info p {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .contact-types {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-type {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+    .contact-type-icon { font-size: 1.1rem; margin-top: 0.1rem; }
+    .contact-type-title {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.2rem;
+    }
+    .contact-type-desc {
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* FORM */
+    .contact-form-wrap {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 2.5rem;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-label {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.85rem 1rem;
+      transition: border-color 0.2s;
+      outline: none;
+      appearance: none;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus { border-color: var(--color-accent); }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--color-accent-dark);
+      opacity: 0.6;
+    }
+    .form-select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C4805A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+    .form-select option { background: var(--color-bg); color: var(--color-text); }
+    .form-textarea {
+      resize: vertical;
+      min-height: 160px;
+      line-height: 1.7;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* HONEYPOT — invisible to humans, bots fill it in */
+    .hp-field {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      width: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .btn-submit {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--color-accent);
+      color: #0A0A0A;
+      border: none;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-submit::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.18), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+    .btn-submit:hover {
+      background: #d4906a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(196,128,90,0.3);
+    }
+    .btn-submit:hover::after { transform: translateX(100%); }
+
+    /* SUCCESS */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .form-success.visible { display: block; }
+    .form-success-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .form-success p { color: var(--color-text-muted); font-size: 0.95rem; }
+
+    /* SECTION RULE */
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+      opacity: 0.3;
+    }
+
+    /* BACK LINK */
+    .back-link-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem var(--gutter) 4rem;
+    }
+    .back-link {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--color-accent); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 3rem var(--gutter);
+      text-align: center;
+    }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; }
+    .footer-name {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--color-accent); }
+    .footer-copy { font-size: 0.75rem; color: var(--color-accent-dark); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        background: rgba(10,10,10,0.98);
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 99;
+      }
+      .nav-links.open a { font-size: 1rem; }
+      .contact-main { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">Cameron West</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Back to Home &#8594 <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div class="container">
 
-        <div class="row">
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Cameron West</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-            <div class="col-xl-8 offset-xl-2 py-5">
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-eyebrow">Get in Touch</p>
+    <h1 class="page-title">Contact</h1>
+    <p class="page-intro">Cameron and Rikki read every message. Whether you're a reader, member of the press, or a clinician — we'd love to hear from you.</p>
+  </div>
 
-                <h1>Welcome!</h1>
+  <!-- CONTACT LAYOUT -->
+  <div class="contact-main">
 
-                <p class="lead">Thank you for your messages.</p>
-
-
-                <form id="contact-form" method="post" action="contact.php" role="form">
-
-                    <div class="messages"></div>
-
-                    <div class="controls">
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_name">Firstname *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *"
-                                        required="required" data-error="Firstname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_lastname">Lastname *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control"
-                                        placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_email">Email *</label>
-                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *"
-                                        required="required" data-error="Valid email is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="form_message">Message *</label>
-                                    <textarea id="form_message" name="message" class="form-control" placeholder="Please enter a message *"
-                                        rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-success btn-send" value="Send message">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="text-muted">
-                                    <strong>*</strong> These fields are required. Contact form template by
-                                    <a href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form"
-                                        target="_blank">Bootstrapious</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-
-            </div>
-            <!-- /.8 -->
-
+    <!-- LEFT -->
+    <div class="contact-info">
+      <p class="contact-info-label">How Can We Help</p>
+      <h2>We'd Love to Hear From You</h2>
+      <p>Use the form to reach out — we'll do our best to respond in a timely manner.</p>
+      <div class="contact-types">
+        <div class="contact-type">
+          <span class="contact-type-icon">📖</span>
+          <div>
+            <p class="contact-type-title">Reader Messages</p>
+            <p class="contact-type-desc">Share how the book has impacted you. Your stories matter deeply to Cameron and Rikki.</p>
+          </div>
         </div>
-        <!-- /.row-->
-
+        <div class="contact-type">
+          <span class="contact-type-icon">🎙️</span>
+          <div>
+            <p class="contact-type-title">Media &amp; Press</p>
+            <p class="contact-type-desc">Interview requests, press inquiries, and podcast appearances welcome.</p>
+          </div>
+        </div>
+        <div class="contact-type">
+          <span class="contact-type-icon">🎓</span>
+          <div>
+            <p class="contact-type-title">Speaking &amp; Clinical</p>
+            <p class="contact-type-desc">Speaking engagements, clinical consultations, and professional inquiries.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.container-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8="
-        crossorigin="anonymous"></script>
-    <script src="contact.js"></script>
-    <!-- start footer Area -->
-	<footer class="footer-area" id="contact">
-            <div class="container" id="footer">
-                <div class="row">
-                    <div class="col-lg-5 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h6>Send Us a Message</h6>
-                            <a href="contact.html">Open Contact Page &#8594</a>
-                            <div class="footer-social d-flex align-items-center">
-                                <a href="https://twitter.com/1stperson_book"><i class="fa fa-twitter"></i></a>
-                            </div>
-                            <p class="footer-text">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights
-                                reserved | <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- End footer Area -->
+    <!-- RIGHT — Form -->
+    <div class="contact-form-wrap">
+      <form id="contactForm">
+
+        <!-- Honeypot spam trap — hidden from real users, bots fill this in -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="subject">Subject</label>
+          <select class="form-select" id="subject" name="subject" required>
+            <option value="" disabled selected>Select a subject</option>
+            <option value="Reader Message">Reader Message</option>
+            <option value="Media / Press">Media / Press</option>
+            <option value="Speaking Request">Speaking Request</option>
+            <option value="Clinical Inquiry">Clinical Inquiry</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Your message…" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">✉️</div>
+        <h3>Message Sent</h3>
+        <p>Thank you for reaching out. Cameron and Rikki will be in touch soon.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-rule"></div>
+
+  <div class="back-link-wrap">
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Cameron West, PhD</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#books">Books</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Cameron West. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Form submission with honeypot check
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Reject if honeypot field is filled (spam bot)
+      const honeypot = document.getElementById('website').value;
+      if (honeypot) return;
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
+      window.location.href = `mailto:cameron@cameronwestauthor.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      form.style.display = 'none';
+      success.classList.add('visible');
+    });
+  </script>
 </body>
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        
-        ga('create', 'UA-46825609-1', 'cameronwestauthor.com');
-        ga('send', 'pageview');
-</script>
 </html>
