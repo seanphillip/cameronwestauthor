@@ -1,410 +1,551 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
-
+<html lang="en">
 <head>
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Favicon-->
-	<link rel="shortcut icon" href="img/fav.png">
-	<!-- Author Meta -->
-	<meta name="author" content="codepixer">
-	<!-- Meta Description -->
-	<meta name="description" content="">
-	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
-	<!-- meta character set -->
-	<meta charset="UTF-8">
-	<!-- Site Title -->
-	<meta name="description"
-		content="Cameron West is the New York Times Bestselling and and Oprah Book Club author of &quot;First Person Plural: My Life as a Multiple,&quot; his memoir of Dissociative Identity Disorder." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — Cameron West, PhD</title>
+  <meta name="description" content="Resources for DID, trauma, and dissociative disorders — Cameron West, PhD, author of First Person Plural.">
+  <link rel="shortcut icon" href="img/fav.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg:          #0A0A0A;
+      --color-surface:     #141210;
+      --color-border:      #2E2B28;
+      --color-text:        #F0EDE8;
+      --color-text-muted:  #D4C5B5;
+      --color-accent:      #C4805A;
+      --color-accent-dark: #8B6F5E;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Lora', Georgia, serif;
+      --font-label:   'Cinzel', serif;
+      --max-width: 1100px;
+      --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
 
-	<meta name="author" content="Cameron West" />
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,10,0.97);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav-logo {
+      font-family: var(--font-label);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 1px;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--color-accent); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--color-text);
+    }
 
-	<title>Cameron West - New York Times Best-Selling Author</title>
+    /* PAGE HEADER */
+    .page-header {
+      padding: 8rem var(--gutter) 4rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .page-eyebrow {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .page-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background: var(--color-accent);
+    }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .page-intro {
+      color: var(--color-text-muted);
+      max-width: 640px;
+      font-size: 1.05rem;
+    }
 
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
-	<!--
-			CSS
-			============================================= -->
-	<link rel="stylesheet" href="css/linearicons.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/nice-select.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/mobile.css">
+    /* MAIN */
+    .resources-main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: clamp(3rem, 8vw, 5rem) var(--gutter);
+    }
+    .resource-category {
+      margin-bottom: clamp(3rem, 8vw, 5rem);
+    }
+    .category-title {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .category-title::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background: var(--color-accent);
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .resource-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 1.75rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .resource-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s;
+    }
+    .resource-card:hover {
+      border-color: var(--color-accent-dark);
+      transform: translateY(-3px);
+    }
+    .resource-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .resource-name a {
+      color: var(--color-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .resource-name a:hover { color: var(--color-accent); }
+    .resource-desc {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .resource-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .resource-links a {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .resource-links a::before { content: '→'; font-size: 0.7rem; }
+    .resource-links a:hover { opacity: 0.75; }
+
+    /* HOTLINE */
+    .hotline-card {
+      border-color: var(--color-accent-dark) !important;
+    }
+    .hotline-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .hotline-name a { color: var(--color-text); text-decoration: none; }
+    .hotline-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--color-accent);
+      text-decoration: none;
+      border: 1px solid var(--color-accent);
+      padding: 0.6rem 1.25rem;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+      display: inline-flex;
+    }
+    .hotline-number:hover { background: rgba(196,128,90,0.1); }
+
+    /* BOOK CARD */
+    .book-resource-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      align-items: start;
+      background: var(--color-surface);
+      border: 1px solid var(--color-accent-dark);
+      padding: 2rem;
+      margin-top: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .book-resource-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .book-resource-cover {
+      width: 120px;
+      display: block;
+      box-shadow: -6px 6px 20px rgba(0,0,0,0.6);
+    }
+
+    /* SECTION RULE */
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+      opacity: 0.3;
+    }
+
+    /* BACK LINK */
+    .back-link-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem var(--gutter) 4rem;
+    }
+    .back-link {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--color-accent); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 3rem var(--gutter);
+      text-align: center;
+    }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; }
+    .footer-name {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--color-accent); }
+    .footer-copy { font-size: 0.75rem; color: var(--color-accent-dark); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        background: rgba(10,10,10,0.98);
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 99;
+      }
+      .nav-links.open a { font-size: 1rem; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .book-resource-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .book-resource-cover { margin: 0 auto; }
+    }
+  </style>
 </head>
-
 <body>
-	<div class="sticky-top">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="index.html">Cameron West</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Back to Home &#8594 <span
-								class="sr-only">(current)</span></a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</div>
 
-	<!-- start banner Area -->
-	<section class="banner-area">
-		<div class="container">
-			<h1 id="resources-header">Resources</h1>
-		</div>
-	</section>
-	<!-- End banner Area -->
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Cameron West</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="resources.html" class="active">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-eyebrow">DID &amp; Trauma</p>
+    <h1 class="page-title">Resources</h1>
+    <p class="page-intro">A curated selection of organizations offering information and support focused on trauma-based conditions such as dissociative disorders.</p>
+  </div>
 
-	<!-- Start Align Area -->
-	<div class="whole-wrap" id="resources-main">
-		<div class="container">
-			<h3>The following resources are but a few of a multitude of websites that offer information and support
-				focused on trauma-based conditions such as the dissociative disorders. </h3>
-			<div>
-				<h3>Professional Organizations:</h3>
-				<div class="row pb-10">
-					<div class="col-md-2">
-						<a href="https://www.sidran.org/" target="_blank"> <img src="img/sidran.jpg" alt=""
-								class="img-fluid"></a>
-					</div>
-					<div class="col-md-6 mt-sm-20">
-						<ul class="list">
-							<li>
-								<a href="https://www.sidran.org/" target="_blank">The Sidran Institute</a>
-							</li>
-						</ul>
-						<p>The Sidran Institute is a 501(c)(3) nonprofit organization of international scope that helps
-							people understand, recover from, and treat traumatic stress (including PTSD), dissociative
-							disorders, and co-occurring issues, such as addictions, self-injury, and suicidality. They
-							provide educational programming, resources for treatment, support, and self-help and
-							publications about trauma and recovery.</p>
-						<ul>
-							<li>
-								<a href="https://www.sidran.org/wp-content/uploads/2018/11/What-is-a-dissociative-disorder.pdf"
-									target="_blank">• Sidran DID Facts</a>
-							</li>
-							<li>
-								<a href="https://www.sidran.org/wp-content/uploads/2019/01/Trauma-Treatment-Programs.pdf"
-									target="_blank">• Sidran Therapist/Treatment Program resource</a>
-							</li>
+  <main class="resources-main">
 
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-2">
-						<a href="https://www.isst-d.org/" target="_blank"><img src="img/issdt.jpg" alt=""
-								class="img-fluid"></a>
-					</div>
-					<div class="col-md-6 mt-sm-20">
-						<ul class="list">
-							<li>
-								<a href="https://www.isst-d.org/" target="_blank">ISSD-T.org</a>
-							</li>
-						</ul>
-						<p>The International Society for the Study of Trauma and Dissociation is an “international,
-							non-profit, professional association organized to develop and promote comprehensive,
-							clinically effective and empirically based resources and responses to trauma and
-							dissociation.” </p>
-						<ul>
-							<li>
-								<a href="https://www.isst-d.org/" target="_blank">International Society for the Study of
-									Trauma and Dissociation</a>
-							</li>
-							<li>
-								<a href="https://www.isst-d.org/resources/dissociation-faqs/" target="_blank">ISST-D DID
-									FAQs</a>
-							</li>
-							<li>
-								<a href="https://isstd.connectedcommunity.org/network/network-find-a-professional"
-									target="_blank">ISST-D Find-a-professional search resource:</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div>
-					<h3>Online Information, Support and Forums:</h3>
-					<div class="row pb-20">
-						<div class="col-md-2">
-							<a href="http://www.aninfinitemind.com/" target="_blank"><img src="img/infinite.jpg" alt=""
-									class="img-fluid"></a>
-						</div>
-						<div class="col-md-4 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="http://www.aninfinitemind.com/" target="_blank">An Infinite Mind</a>
-								</li>
-							</ul>
-							<p>An Infinite Mind is a 501(c)3 non-profit dedicated to educating the public and
-								professional
-								community about trauma-based dissociation with a primary focus on Dissociative Identity
-								Disorder in an effort to dispel the myths and stigmas attached to it.</p>
-						</div>
-						<div class="col-md-2">
-							<a href="http://www.fortrefuge.com" target="_blank"><img src="img/fortrefuge.jpg" alt=""
-									class="img-fluid"></a>
-						</div>
-						<div class="col-md-4 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="http://www.fortrefuge.com" target="_blank">Fort Refuge</a>
-								</li>
-							</ul>
-							<p>Fort Refuge: Abuse Survivors’ Community offers support in the form of resources and
-								members-only forums to people over the age of 16 who have experienced child abuse, rape,
-								domestic violence or religious abuse. </p>
-						</div>
-					</div>
-					<div class="row pb-20">
-						<div class="col-md-2">
-							<a href="https://malesurvivor.org/" target="_blank"><img src="img/malesurvivor.png" alt=""
-									class="img-fluid"></a>
-						</div>
-						<div class="col-md-4 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="https://malesurvivor.org/">Malesurvivor</a>
-								</li>
-							</ul>
-							<p>Malesurvivor describes itself as “a leader in the fight to improve the resources and
-								support
-								available to male survivors of all forms of sexual abuse in the US and around the globe”
-								and
-								“a community built upon a unique foundation of respect and mutual partnership between
-								survivors themselves and the professionals who work with them."</p>
-						</div>
-						<div class="col-md-2">
-							<a href="https://pandys.org" target="_blank"><img src="img/pandorasproject.jpg" alt=""
-									class="img-fluid"></a>
-						</div>
-						<div class="col-md-4 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="https://pandys.org/" target="_blank">Pandora's Project</a>
-								</li>
-							</ul>
-							<p>Pandora’s Project is a nonprofit organization dedicated to providing support, and
-								resources to survivors of rape and sexual abuse and their friends and family. They offer
-								an online support group, message board and chat room as well as hotline and
-								informational resources.</p>
-						</div>
-					</div>
-					<div class="row pb-20">
-						<div class="col-md-2">
-							<a href="http://www.mosaicminds.org/" target="_blank"><img src="img/mosaicminds.png" alt=""
-									class="img-fluid"></a>
-						</div>
-						<div class="col-md-4 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="http://www.mosaicminds.org/" target="_blank">Mosaic Minds</a>
-								</li>
-							</ul>
-							<p>Mosaic Minds, Inc. is a primarily internet-based organization founded in 1999 by a
-								group of
-								dissociative survivors of childhood trauma and their loved ones. Mosaic Minds, Inc.
-								seeks to
-								provide an online clearinghouse of information for those whose lives are impacted by
-								the
-								more
-								extreme form of dissociation called “Dissociative Identity Disorder” (DID), formerly
-								called
-								“Multiple Personality Disorder” (MPD).</p>
-						</div>
-					</div>
-				</div>
-				<div>
-					<h3>UK Based:</h3>
-					<div class="row pb-20">
-						<div class="col-md-2">
-							<a href="https://www.firstpersonplural.org.uk/" target="_blank"><img
-									src="img/FPP-balloon-logo.png" alt="" class="img-fluid"></a>
-						</div>
-						<div class="col-md-4 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="https://www.firstpersonplural.org.uk/"
-										target="_blank">FirstPersonPlural.org</a>
-								</li>
-							</ul>
-							<p>First Person Plural (FPP) specializes in working for and on behalf of all those
-								affected by
-								Dissociative Identity Disorder (DID) and similar complex trauma-related dissociative
-								identity conditions.
-							</p>
-						</div>
-						<div class="col-md-2">
-							<a href="https://www.pods-online.org.uk/" target="_blank"><img src="img/pods-online.png"
-									alt="" class="img-fluid"></a>
-						</div>
-						<div class="col-md-4 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="https://www.pods-online.org.uk/" target="_blank">Positive Outcomes for
-										Dissociative Survivors (PODS)</a>
-								</li>
-							</ul>
-							<p>PODS - Positive Outcomes for Dissociative Survivors offers information and support
-								(Helpline,
-								Find-a-Therapist) for those with dissociative disorders as well as professional
-								training
-								programs for therapists treating these conditions. </p>
-						</div>
-					</div>
-				</div>
-				<div>
-					<h3>Hotline:</h3>
-					<div class="row pb-20">
-						<div class="col-md-2">
-							<a href="https://www.rainn.org/" target="_blank"><img src="img/rainn.jpg" alt=""
-									class="img-fluid"></a>
-						</div>
-						<div class="col-md-6 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="https://www.rainn.org/
-										" target="_blank">RAINN</a>
-								</li>
-							</ul>
-							<p>RAINN (Rape, Abuse & Incest National Network) is the nation's largest anti-sexual
-								violence
-								organization. RAINN created and operates the National Sexual Assault Hotline
-								<a href="tel:800-656-4673">(800.656.HOPE)</a>
-								in partnership with more than 1,000 local sexual assault service providers across
-								the
-								country.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div>
-					<h3>Other:</h3>
-					<div class="row pb-20">
-						<div class="col-md-2">
-							<a href="https://www.cdc.gov/violenceprevention/childabuseandneglect/acestudy/index.html"
-								target="_blank"><img src="img/cdc.png" alt="" class="img-fluid"></a>
-						</div>
-						<div class="col-md-6 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="https://www.cdc.gov/violenceprevention/childabuseandneglect/acestudy/index.html"
-										target="_blank">CDC Child Abuse Study</a>
-								</li>
-							</ul>
-							<p>Child abuse or neglect (Adverse Child Experiences or ACEs) in any form has
-								significant and
-								lasting consequences on the health and well-being of the child. The Center for
-								Disease
-								Control partnered with Kaiser Permanente to do a long-term study of over 17,000
-								people to
-								determine the prevalence and impact of Adverse Child Experiences. Read about it
-								here:
-							</p>
-						</div>
-					</div>
-				</div>
-				<div>
-					<h3>Books:</h3>
-					<div class="row pb-20">
-						<div class="col-md-2">
-							<a href="https://www.cameronwestauthor.com"
-								target="_blank"><img src="img/FPP-cover-medium.png" alt="" class="img-fluid"></a>
-						</div>
-						<div class="col-md-6 mt-sm-20 pt-10">
-							<ul class="list">
-								<li>
-									<a href="https://www.cameronwestauthor.com"
-										target="_blank">First Person Plural: My Life as a Multiple</a>
-								</li>
-							</ul>
-							<p>Meet Davy, a 4-year-old with harrowing memories of abuse. Switch, a self-harming
-								10-year-old. And Dusty, a shy pre-teen girl. Unique individuals with one thing in
-								common: They live, along with 21 others, in the body of Cameron West.
+    <!-- Professional Organizations -->
+    <div class="resource-category">
+      <p class="category-title">Professional Organizations</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-name"><a href="https://www.sidran.org/" target="_blank">The Sidran Institute</a></div>
+          <p class="resource-desc">A nonprofit of international scope helping people understand, recover from, and treat traumatic stress including PTSD, dissociative disorders, and co-occurring issues such as addictions and self-injury.</p>
+          <ul class="resource-links">
+            <li><a href="https://www.sidran.org/wp-content/uploads/2018/11/What-is-a-dissociative-disorder.pdf" target="_blank">Sidran DID Facts</a></li>
+            <li><a href="https://www.sidran.org/wp-content/uploads/2019/01/Trauma-Treatment-Programs.pdf" target="_blank">Therapist &amp; Treatment Program Resource</a></li>
+          </ul>
+        </div>
+        <div class="resource-card">
+          <div class="resource-name"><a href="https://www.isst-d.org/" target="_blank">ISST-D</a></div>
+          <p class="resource-desc">The International Society for the Study of Trauma and Dissociation — a non-profit professional association promoting comprehensive, clinically effective and empirically based resources and responses to trauma and dissociation.</p>
+          <ul class="resource-links">
+            <li><a href="https://www.isst-d.org/resources/dissociation-faqs/" target="_blank">DID FAQs</a></li>
+            <li><a href="https://isstd.connectedcommunity.org/network/network-find-a-professional" target="_blank">Find a Professional</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-								In this intimate memoir of life with Dissociative Identity Disorder, West struggles to
-								understand the workings of his fragmented mind and heal his damaged spirit — all while
-								desperately hanging on to the slender thread that connects him to his wife, son and some
-								semblance of normal life.<br><br>
+    <div class="section-rule"></div>
 
-								A bestseller, the book was published in 22 countries. Disney Studios purchased the movie
-								rights and developed a script, though the movie has yet to be produced.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="whole-wrap" id="resources-main">
-						<div class="container">
-							<h3>Back To: <a href="index.html">Home</a></h3>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- start footer Area -->
-	<footer class="footer-area" id="contact">
-		<div class="container" id="footer">
-			<div class="row">
-				<div class="col-lg-5 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>Send Us a Message</h6>
-						<a href="contact.html">Open Contact Page &#8594</a>
-						<div class="footer-social d-flex align-items-center">
-							<a href="https://twitter.com/1stperson_book"><i class="fa fa-twitter"></i></a>
-						</div>
-						<p class="footer-text">
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							&copy;
-							<script>document.write(new Date().getFullYear());</script> All rights
-							reserved | <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End footer Area -->
+    <!-- Online Support -->
+    <div class="resource-category" style="margin-top: clamp(3rem, 8vw, 5rem)">
+      <p class="category-title">Online Information, Support &amp; Forums</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-name"><a href="http://www.aninfinitemind.com/" target="_blank">An Infinite Mind</a></div>
+          <p class="resource-desc">A 501(c)3 non-profit dedicated to educating the public and professional community about trauma-based dissociation with a primary focus on DID — working to dispel myths and stigmas.</p>
+        </div>
+        <div class="resource-card">
+          <div class="resource-name"><a href="http://www.fortrefuge.com" target="_blank">Fort Refuge</a></div>
+          <p class="resource-desc">An abuse survivors' community offering resources and members-only forums to people over 16 who have experienced child abuse, rape, domestic violence, or religious abuse.</p>
+        </div>
+        <div class="resource-card">
+          <div class="resource-name"><a href="https://malesurvivor.org/" target="_blank">Male Survivor</a></div>
+          <p class="resource-desc">A leader in improving resources and support available to male survivors of all forms of sexual abuse — built on a foundation of respect and mutual partnership between survivors and professionals.</p>
+        </div>
+        <div class="resource-card">
+          <div class="resource-name"><a href="https://pandys.org/" target="_blank">Pandora's Project</a></div>
+          <p class="resource-desc">A nonprofit providing support and resources to survivors of rape and sexual abuse and their friends and family — offering online support groups, message boards, and informational resources.</p>
+        </div>
+        <div class="resource-card">
+          <div class="resource-name"><a href="http://www.mosaicminds.org/" target="_blank">Mosaic Minds</a></div>
+          <p class="resource-desc">Founded in 1999 by dissociative survivors of childhood trauma — an online clearinghouse of information for those whose lives are impacted by Dissociative Identity Disorder (DID).</p>
+        </div>
+      </div>
+    </div>
 
-	<script src="js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script type="text/javascript"
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-	<script src="js/easing.min.js"></script>
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.min.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/jquery.nice-select.min.js"></script>
-	<script src="js/parallax.min.js"></script>
-	<script src="js/waypoints.min.js"></script>
-	<script src="js/jquery.counterup.min.js"></script>
-	<script src="js/mail-script.js"></script>
-	<script src="js/main.js"></script>
+    <div class="section-rule"></div>
+
+    <!-- UK Based -->
+    <div class="resource-category" style="margin-top: clamp(3rem, 8vw, 5rem)">
+      <p class="category-title">UK Based</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-name"><a href="https://www.firstpersonplural.org.uk/" target="_blank">First Person Plural UK</a></div>
+          <p class="resource-desc">Specializes in working for and on behalf of all those affected by Dissociative Identity Disorder and similar complex trauma-related dissociative identity conditions.</p>
+        </div>
+        <div class="resource-card">
+          <div class="resource-name"><a href="https://www.pods-online.org.uk/" target="_blank">PODS — Positive Outcomes for Dissociative Survivors</a></div>
+          <p class="resource-desc">Offers a helpline, Find-a-Therapist resource, and professional training programs for therapists treating dissociative disorders.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-rule"></div>
+
+    <!-- Hotline -->
+    <div class="resource-category" style="margin-top: clamp(3rem, 8vw, 5rem)">
+      <p class="category-title">Crisis Hotline</p>
+      <div class="resource-card hotline-card">
+        <div class="hotline-name"><a href="https://www.rainn.org/" target="_blank">RAINN</a></div>
+        <p class="resource-desc">Rape, Abuse &amp; Incest National Network — the nation's largest anti-sexual violence organization, operating the National Sexual Assault Hotline in partnership with more than 1,000 local service providers.</p>
+        <a href="tel:800-656-4673" class="hotline-number">📞 800.656.HOPE (4673)</a>
+      </div>
+    </div>
+
+    <div class="section-rule"></div>
+
+    <!-- Research & Books -->
+    <div class="resource-category" style="margin-top: clamp(3rem, 8vw, 5rem)">
+      <p class="category-title">Research &amp; Books</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-name"><a href="https://www.cdc.gov/violenceprevention/childabuseandneglect/acestudy/index.html" target="_blank">CDC Adverse Childhood Experiences Study</a></div>
+          <p class="resource-desc">The CDC partnered with Kaiser Permanente to study over 17,000 people on the prevalence and impact of Adverse Child Experiences (ACEs) — child abuse or neglect in any form has significant and lasting consequences on health and well-being.</p>
+          <ul class="resource-links">
+            <li><a href="https://www.cdc.gov/violenceprevention/childabuseandneglect/acestudy/index.html" target="_blank">Read the Study</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Book card with cover image -->
+      <div class="book-resource-card">
+        <img src="img/firstpersonplural.png" alt="First Person Plural — Cameron West" class="book-resource-cover" loading="lazy">
+        <div>
+          <div class="resource-name"><a href="index.html">First Person Plural: My Life as a Multiple</a></div>
+          <p class="resource-desc">Cameron West's New York Times bestselling memoir — an intimate account of life with Dissociative Identity Disorder. Now available in a 25th Anniversary Edition (Blackstone Publishing, May 26, 2026) with a new Epilogue including the first physiological evidence of alter personalities via EEG brain wave patterns. Published in 22 countries.</p>
+          <ul class="resource-links">
+            <li><a href="https://www.amazon.com/s?k=first+person+plural+cameron+west" target="_blank">Order on Amazon</a></li>
+            <li><a href="https://www.barnesandnoble.com/s/first+person+plural+cameron+west" target="_blank">Barnes &amp; Noble</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="section-rule"></div>
+
+  <div class="back-link-wrap">
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Cameron West, PhD</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#books">Books</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Cameron West. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.resource-card, .book-resource-card').forEach(el => observer.observe(el));
+  </script>
 </body>
-<script>(function (i, s, o, g, r, a, m) {
-		i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-			(i[r].q = i[r].q || []).push(arguments)
-		}, i[r].l = 1 * new Date(); a = s.createElement(o),
-			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-	ga('create', 'UA-46825609-1', 'cameronwestauthor.com');
-	ga('send', 'pageview');
-</script>
-
 </html>
