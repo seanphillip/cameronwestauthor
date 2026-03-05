@@ -426,17 +426,8 @@
     }
     .about-photo {
       width: 100%;
-      border-radius: var(--radius);
-      position: relative;
-      z-index: 1;
-    }
-    .signature {
-      margin: 1.5rem auto 0;
-      max-width: 160px;
       display: block;
-      mix-blend-mode: screen;
-      filter: grayscale(1) brightness(1.5);
-      opacity: 0.85;
+      filter: grayscale(20%) contrast(1.1);
     }
 
     .about-eyebrow {
@@ -1121,8 +1112,6 @@
       <div class="about-photo-wrap fade-up">
         <img src="img/cameron_west_headshot.png"
              alt="Cameron West" class="about-photo" loading="lazy" />
-        <img src="img/signature.png"
-             alt="Cameron West signature" class="signature" loading="lazy" />
       </div>
       <div class="about-body fade-up" style="transition-delay:0.1s">
         <p class="about-eyebrow">About the Author</p>
