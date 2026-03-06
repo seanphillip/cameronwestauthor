@@ -271,11 +271,29 @@
       color: var(--color-accent);
       margin-bottom: 1rem;
     }
-    .hero-badges {
+    .hero-credentials {
+      margin-bottom: 1.5rem;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.2rem;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .hero-credentials span {
+      font-family: var(--font-label);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .hero-credentials span::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0.75rem;
+      height: 1px;
+      background: var(--color-accent);
     }
     .badge-pill {
       font-family: var(--font-label);
@@ -289,11 +307,6 @@
       white-space: nowrap;
     }
 
-    .hero-ctas {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
 
     .btn-primary {
       font-family: var(--font-label);
@@ -382,8 +395,7 @@
         padding: 8rem 5vw 4rem;
         gap: 3rem;
       }
-      .hero-ctas      { justify-content: center; }
-      .hero-badges    { justify-content: center; }
+      .hero-credentials { align-items: center; }
       .hero-quote     { text-align: left; }
       .hero-cover-wrap { order: -1; }
       .hero-cover     { max-width: 260px; }
@@ -1112,17 +1124,9 @@
           <cite>— Oprah Winfrey</cite>
         </blockquote>
         <p class="hero-release">Coming May 26, 2026 &mdash; Blackstone Publishing</p>
-        <div class="hero-badges">
-          <span class="badge-pill">25th Anniversary Edition</span>
-          <span class="badge-pill">Published in 22 Countries</span>
-          <span class="badge-pill">Oprah's Pick</span>
-          <span class="badge-pill">#1 Amazon &amp; B&amp;N</span>
-        </div>
-        <div class="hero-ctas">
-          <a href="https://www.amazon.com/s?k=first+person+plural+cameron+west"
-             target="_blank" rel="noopener" class="btn-primary">Order on Amazon</a>
-          <a href="https://www.barnesandnoble.com/s/first+person+plural+cameron+west"
-             target="_blank" rel="noopener" class="btn-secondary">Barnes &amp; Noble</a>
+        <div class="hero-credentials">
+          <span>25th Anniversary Edition</span>
+          <span>Published in 22 Countries</span>
         </div>
       </div>
 
