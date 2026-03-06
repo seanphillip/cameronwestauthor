@@ -10,7 +10,7 @@
 // ─── CONFIGURATION ───────────────────────────────────────────────────────────
 
 // IMPORTANT: Replace this with your own secret (match exactly what you enter in GitHub)
-define('WEBHOOK_SECRET', 'REPLACE_WITH_YOUR_SECRET_TOKEN');
+define('WEBHOOK_SECRET', '71d331449910593efda6de99f0d974e207ae098cea03ddbc0c39d2f438e502b5');
 
 // Absolute path to your site root
 define('REPO_PATH', '/home2/cameronw/public_html');
