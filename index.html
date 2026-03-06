@@ -228,11 +228,12 @@
 
     .hero-h1 {
       font-family: var(--font-heading);
-      font-size: clamp(1.8rem, 4.5vh, 5.5rem);
+      font-size: clamp(1.8rem, 3.8vh, 4.5rem);
       font-weight: 900;
       line-height: 1.05;
       margin-bottom: 0.3rem;
       color: var(--color-text);
+      white-space: nowrap;
     }
     .hero-h1 em {
       font-style: italic;
@@ -399,6 +400,10 @@
         height: auto;
         min-height: 100vh;
         max-height: none;
+      }
+      .hero-h1 {
+        white-space: normal;
+        font-size: clamp(2rem, 8vw, 3.5rem);
       }
     }
 
@@ -1112,7 +1117,7 @@
       <!-- Left: Text -->
       <div class="hero-text fade-up">
         <p class="hero-eyebrow">New York Times Bestseller</p>
-        <h1 class="hero-h1">First Person<br><em>Plural</em></h1>
+        <h1 class="hero-h1">First Person <em>Plural</em></h1>
         <p class="hero-subtitle">My Life as a Multiple</p>
         <blockquote class="hero-quote">
           "One of the most astounding stories I've ever heard&hellip; a great testimony to the human spirit, what a person can do: survive, overcome, and ultimately triumph&hellip; I hope you'll read it."
