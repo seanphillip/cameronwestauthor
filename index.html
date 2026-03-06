@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
 
   <style>
     /* ========================================
@@ -26,9 +26,9 @@
       --color-text-muted:  #D4C5B5;
       --color-accent:      #C4805A;
       --color-accent-dark: #8B6F5E;
-      --font-heading:      'Playfair Display', Georgia, serif;
-      --font-body:         'Lora', Georgia, serif;
-      --font-label:        'Cinzel', serif;
+      --font-heading:      'Oswald', sans-serif;
+      --font-body:         'DM Sans', sans-serif;
+      --font-label:        'DM Sans', sans-serif;
       --section-pad:       6rem 2rem;
       --max-width:         1200px;
       --radius:            6px;
@@ -55,6 +55,12 @@
     img { max-width: 100%; height: auto; display: block; }
     a   { color: var(--color-accent); text-decoration: none; }
     a:hover { color: var(--color-text); }
+
+    h1, h2, h3,
+    .hero-h1, .about-h2, .section-h2,
+    .slider-section-title, .book-title, .pullquote-text {
+      letter-spacing: -0.02em;
+    }
 
     /* ========================================
        GRAIN TEXTURE OVERLAY
