@@ -1,16 +1,15 @@
-# Remove .html extension from URLs
+Options -MultiViews
 RewriteEngine On
 
-# Redirect /index.html to clean root URL
-RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
-RewriteRule ^ / [R=301,L]
+# Redirect index.html to clean root
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
 
-# Redirect /page.html to /page (remove .html extension)
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+# Remove .html extension via redirect
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# Serve .html files without extension in URL
+# Internally rewrite clean URLs to .html files
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^ %{REQUEST_URI}.html [L]
+RewriteRule ^([^.]+)/?$ $1.html [L]
