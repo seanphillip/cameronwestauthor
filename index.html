@@ -547,7 +547,7 @@
       border-radius: var(--radius);
       padding: 2rem;
     }
-    .editorial-card .source {
+    .editorial-source {
       font-family: var(--font-label);
       font-size: 0.65rem;
       letter-spacing: 0.15em;
@@ -555,21 +555,15 @@
       color: var(--color-accent);
       margin-bottom: 0.75rem;
     }
-    .editorial-card .headline {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
+    .editorial-card blockquote {
+      font-family: var(--font-display);
       font-style: italic;
-      font-weight: 700;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
       color: var(--color-text);
-      margin-bottom: 1rem;
-      line-height: 1.4;
-    }
-    .editorial-card p {
-      font-family: var(--font-body);
-      font-style: italic;
-      font-size: 0.92rem;
-      color: var(--color-text-muted);
-      line-height: 1.7;
+      line-height: 1.75;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 1.25rem;
+      margin: 0;
     }
 
     @media (max-width: 768px) {
@@ -1237,18 +1231,16 @@
     <!-- Editorial Cards -->
     <div class="editorial-grid">
       <div class="editorial-card fade-up">
-        <p class="source">Publisher's Weekly</p>
-        <p class="headline">"A Page-Turning Journey Through Hell"</p>
-        <p>West compellingly recounts his journey toward sanity. Readers who must cope with DID or other debilitating mental illnesses will appreciate West's honesty and insight about the subject.</p>
+        <p class="editorial-source">Publisher's Weekly</p>
+        <blockquote>"West compellingly recounts his journey toward sanity. Readers who must cope with DID or other debilitating mental illnesses will appreciate West's honesty and insight about the subject."</blockquote>
       </div>
       <div class="editorial-card fade-up" style="transition-delay:0.1s">
-        <p class="source">Library Journal</p>
-        <p class="headline">"Highly Recommended for Any Public Library"</p>
-        <p>A deeply painful narrative of West's battle with DID. It provides hope and encouragement to DID victims and offers insight into a perplexing condition for future clinicians.</p>
+        <p class="editorial-source">Library Journal</p>
+        <blockquote>"A deeply painful narrative of West's battle with DID. It provides hope and encouragement to DID victims and offers insight into a perplexing condition for future clinicians. Highly recommended for any public library."</blockquote>
       </div>
       <div class="editorial-card fade-up" style="transition-delay:0.2s">
-        <p class="source">Entertainment Weekly</p>
-        <p class="headline">"A Page-Turning Journey Through Hell"</p>
+        <p class="editorial-source">Entertainment Weekly</p>
+        <blockquote>"A page-turning journey through hell."</blockquote>
       </div>
     </div>
 
