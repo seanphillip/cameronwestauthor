@@ -1,4 +1,13 @@
 Options -MultiViews
+
+# Fix 404s for bare section paths (they're hash anchors on the homepage)
+Redirect 301 /about     https://cameronwestauthor.com/
+Redirect 301 /books     https://cameronwestauthor.com/
+Redirect 301 /reviews   https://cameronwestauthor.com/
+Redirect 301 /about/    https://cameronwestauthor.com/
+Redirect 301 /books/    https://cameronwestauthor.com/
+Redirect 301 /reviews/  https://cameronwestauthor.com/
+
 RewriteEngine On
 
 # Redirect index.html to clean root

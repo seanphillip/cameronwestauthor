@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Cameron West, PhD</title>
   <meta name="description" content="Contact Cameron West, PhD — author of First Person Plural: My Life as a Multiple.">
+  <link rel="canonical" href="https://cameronwestauthor.com/contact.html" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://cameronwestauthor.com/contact.html" />
+  <meta property="og:title"       content="Contact — Cameron West, PhD" />
+  <meta property="og:description" content="Get in touch with Cameron and Rikki West — reader messages, media inquiries, speaking requests, and clinical consultations." />
+  <meta property="og:image"       content="https://cameronwestauthor.com/img/firstpersonplural.png" />
+  <meta property="og:site_name"   content="Cameron West Author" />
   <link rel="shortcut icon" href="img/fav.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
@@ -591,8 +598,15 @@
       fetch('send_mail.php', { method: 'POST', body: new FormData(form) })
         .then(res => {
           if (!res.ok) throw new Error('Server error');
-          form.style.display = 'none';
-          success.classList.add('visible');
+          return res.json();
+        })
+        .then(data => {
+          if (data && data.success === true) {
+            form.style.display = 'none';
+            success.classList.add('visible');
+          } else {
+            throw new Error('Mail not sent');
+          }
         })
         .catch(() => {
           submitBtn.disabled = false;
