@@ -126,12 +126,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.25rem 2.5rem;
-      transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
-    }
-    #nav.scrolled {
       background: rgba(10,10,10,0.97);
-      box-shadow: 0 2px 24px rgba(0,0,0,0.6);
-      padding: 0.85rem 2.5rem;
+      border-bottom: 1px solid var(--color-border);
     }
 
     .nav-logo {
@@ -1379,14 +1375,6 @@
 
   <!-- ========== JAVASCRIPT ========== -->
   <script>
-    /* ----------------------------------------
-       NAV SCROLL EFFECT
-    ---------------------------------------- */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-
     /* ----------------------------------------
        MOBILE NAV
     ---------------------------------------- */
