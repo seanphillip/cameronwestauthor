@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Club Guide — Cameron West, PhD</title>
+  <meta name="description" content="Book club discussion questions for First Person Plural by Cameron West — a New York Times bestselling memoir about Dissociative Identity Disorder." />
+  <meta name="keywords" content="Cameron West, First Person Plural, book club, discussion questions, DID, Dissociative Identity Disorder" />
+  <meta name="author" content="Cameron West" />
+  <link rel="canonical" href="https://cameronwestauthor.com/bookclub.html" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://cameronwestauthor.com/bookclub.html" />
+  <meta property="og:title"       content="Book Club Guide — First Person Plural" />
+  <meta property="og:description" content="Discussion questions and a reading guide for First Person Plural by Cameron West." />
+  <meta property="og:image"       content="https://cameronwestauthor.com/img/firstpersonplural.png" />
+  <meta property="og:site_name"   content="Cameron West Author" />
+  <link rel="shortcut icon" href="img/fav.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg: #0A0A0A;
+      --color-surface: #141210;
+      --color-border: #2E2B28;
+      --color-text: #F0EDE8;
+      --color-text-muted: #D4C5B5;
+      --color-accent: #C4805A;
+      --color-accent-dark: #8B6F5E;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Lora', Georgia, serif;
+      --font-label: 'Cinzel', serif;
+      --max-width: 1100px;
+      --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: 1rem; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem var(--gutter); transition: background 0.3s, border-color 0.3s; border-bottom: 1px solid transparent; }
+    nav.scrolled { background: rgba(10,10,10,0.96); border-color: var(--color-border); backdrop-filter: blur(8px); }
+    .nav-logo { font-family: var(--font-label); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--color-text); text-decoration: none; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; position: relative; transition: color 0.2s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--color-accent); transition: width 0.25s; }
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--color-text); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: var(--color-text); transition: transform 0.35s, opacity 0.35s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; inset: 0; background: var(--color-bg); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-family: var(--font-label); font-size: 1.1rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text); text-decoration: none; }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    /* ── PAGE HEADER ── */
+    .page-header { padding: 8rem var(--gutter) 4rem; max-width: var(--max-width); margin: 0 auto; border-bottom: 1px solid var(--color-border); }
+    .page-eyebrow { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .page-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--color-accent); }
+    .page-title { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1rem; }
+    .page-intro { color: var(--color-text-muted); max-width: 640px; font-size: 1.05rem; }
+    /* ── MAIN ── */
+    .bookclub-main { max-width: var(--max-width); margin: 0 auto; padding: clamp(3rem, 8vw, 5rem) var(--gutter); }
+    /* ── INTRO NOTE ── */
+    .guide-intro { background: var(--color-surface); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); padding: 1.75rem 2rem; border-radius: 2px; margin-bottom: 3.5rem; }
+    .guide-intro p { color: var(--color-text-muted); font-style: italic; font-size: 1.0rem; }
+    /* ── SECTION LABEL ── */
+    .questions-label { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
+    .questions-label::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--color-accent); }
+    /* ── QUESTION GROUPS ── */
+    .question-group { margin-bottom: 3.5rem; }
+    .group-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--color-text); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); }
+    /* ── INDIVIDUAL QUESTIONS ── */
+    .question-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .question-list li { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 2px; transition: border-color 0.2s; }
+    .question-list li:hover { border-color: var(--color-accent-dark); }
+    .q-num { font-family: var(--font-label); font-size: 0.65rem; color: var(--color-accent); letter-spacing: 0.1em; padding-top: 0.2rem; min-width: 1.5rem; }
+    .q-text { font-size: 0.97rem; color: var(--color-text-muted); line-height: 1.7; }
+    /* ── ASK A QUESTION CTA ── */
+    .ask-wrap { margin-top: 4rem; padding: 3rem; background: var(--color-surface); border: 1px solid var(--color-border); text-align: center; }
+    .ask-wrap h2 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .ask-wrap p { color: var(--color-text-muted); max-width: 520px; margin: 0 auto 1.75rem; font-size: 0.97rem; }
+    .btn-ask { display: inline-block; font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-bg); background: var(--color-accent); padding: 0.85rem 2.25rem; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-ask:hover { background: var(--color-text); transform: translateY(-1px); }
+    /* ── DIVIDER ── */
+    .section-rule { border: none; border-top: 1px solid var(--color-border); max-width: var(--max-width); margin: 0 auto; }
+    /* ── BACK LINK ── */
+    .back-link-wrap { max-width: var(--max-width); margin: 0 auto; padding: 2rem var(--gutter); }
+    .back-link-wrap a { font-family: var(--font-label); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; transition: color 0.2s; }
+    .back-link-wrap a:hover { color: var(--color-accent); }
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--color-border); padding: 3rem var(--gutter); text-align: center; }
+    .footer-name { font-family: var(--font-label); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 1.25rem; }
+    .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; list-style: none; margin-bottom: 1.5rem; }
+    .footer-nav a { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--color-accent); }
+    .footer-copy { font-size: 0.78rem; color: var(--color-accent-dark); }
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Cameron West</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="bookclub.html" class="active">Book Club</a></li>
+      <li><a href="qa.html">Q&amp;A</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="index.html#about" onclick="closeMobileNav()">About</a>
+    <a href="index.html#books" onclick="closeMobileNav()">Books</a>
+    <a href="index.html#reviews" onclick="closeMobileNav()">Reviews</a>
+    <a href="resources.html" onclick="closeMobileNav()">Resources</a>
+    <a href="bookclub.html" onclick="closeMobileNav()">Book Club</a>
+    <a href="qa.html" onclick="closeMobileNav()">Q&amp;A</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+  </div>
+  <div class="page-header">
+    <p class="page-eyebrow">Reading Guide</p>
+    <h1 class="page-title">Book Club Discussion Questions</h1>
+    <p class="page-intro">Discussion questions for <em>First Person Plural: My Life as a Multiple</em> — prepared by Cameron and Rikki for reading groups, book clubs, and classroom use.</p>
+  </div>
+  <main class="bookclub-main">
+    <div class="guide-intro">
+      <p>These questions were written by Cameron and Rikki West to guide conversation around <em>First Person Plural</em>. There are no right or wrong answers — the book touches each reader differently. Let the conversation go where it needs to go.</p>
+    </div>
+    <p class="questions-label">Discussion Questions</p>
+    <ul class="question-list">
+      <li><span class="q-num">01</span><span class="q-text">Cam and Rikki are completely shocked when Cam is diagnosed with Dissociative Identity Disorder (called DID). Discuss their reactions and how you would feel if you or someone you love was suddenly diagnosed with this or a serious psychological condition. How would you react if someone you loved began to manifest alter personalities?</span></li>
+      <li><span class="q-num">02</span><span class="q-text">Denial is a theme that runs through the memoir. What was the purpose of Cam's denial and what did he do to overcome it as his story goes on? Think about uncomfortable or scary situations in your own life that you have "denied." Did you ultimately face them?</span></li>
+      <li><span class="q-num">03</span><span class="q-text">Cam and Rikki tried to protect their son from what was happening to his dad. They didn't always agree on what to do. Young alters wanted to play with Kai. What strategies did they use? What bargains did they make? What would you have done?</span></li>
+      <li><span class="q-num">04</span><span class="q-text">One of the saddest but all too common reactions to emotional distress is self-harm, which is a way of releasing pain. How did you feel when Cam hurt himself? How would you react to finding out that someone you love was hurting themselves?</span></li>
+      <li><span class="q-num">05</span><span class="q-text">Cam and Rikki moved from New York to California to have a fresh start away from Cam's mother. They didn't tell anyone about Cam's diagnosis. Why do you think they kept it a secret from their new friends? Discuss the stigma around mental health issues. Do you feel that the culture is getting more tolerant and compassionate or less?</span></li>
+      <li><span class="q-num">06</span><span class="q-text">Cam's memories of his childhood abuse were repressed for decades. Abusers generally deny having done anything when confronted, as Cam's mother did. But Cam and Rikki couldn't deny Cam's dreams and physical flashbacks. Discuss the elusive nature of memory. Have you or anyone you know ever recovered a memory that had been hidden? When <em>First Person Plural</em> was first published, Cam was accused by some of "making it up." How do you think he and Rikki felt about that — and how would you feel if your story wasn't believed?</span></li>
+      <li><span class="q-num">07</span><span class="q-text">DID is a severe reaction to abuse that occurs at a very early age, and alter personalities are created to protect the child from the experience of the abuse. Generally, each alter has a job to do — hold a memory, experience the trauma, nurture the child, be the good student. In fact, we all have different parts that make up our personality and identity — our inner child, our nurturer, our angel, our devil. Reveal some of the parts that comprise you and the purposes they serve.</span></li>
+      <li><span class="q-num">08</span><span class="q-text">DID is usually represented in films in sensational ways, with an alter personality committing some heinous crime. Though there have been some cases where alters commit crimes and the host personality is tried in court, most multiples are just regular people — mothers and fathers, teachers, bank tellers, cashiers, dog walkers. Have you ever met a multiple, or do you or a friend know of any? How would you act if you met a multiple and an alter came out?</span></li>
+      <li><span class="q-num">09</span><span class="q-text">Not all people who suffer abuse become multiples, but adverse childhood experiences are sadly very common, and too many people are affected by the experience of having been neglected, abandoned, abused, or otherwise treated poorly. Our mental health system is sorely inadequate and unavailable to many people who need help. Discuss the lack of good mental health care for children and adults in the US. And if you feel comfortable, share your personal experience with finding help for your family, friends, or even yourself.</span></li>
+      <li><span class="q-num">10</span><span class="q-text">DID is an unusual and particularly severe form of adversity, but Cam calls his book a "love story." There are many types of adversity a couple might experience during a long-term relationship. Discuss challenges couples face and what it takes to overcome them and stay partnered.</span></li>
+      <li><span class="q-num">11</span><span class="q-text">How did the book leave you feeling? What touched you the most? Would you recommend it?</span></li>
+    </ul>
+    <div class="ask-wrap">
+      <h2>Have a Question for Cameron?</h2>
+      <p>Cameron reads messages from readers and book clubs personally. If your group has a question you'd like him to respond to, reach out directly.</p>
+      <a href="contact.html?subject=Book+Club+Question" class="btn-ask">Send a Question</a>
+    </div>
+  </main>
+  <hr class="section-rule" />
+  <div class="back-link-wrap">
+    <a href="index.html">← Back to Home</a>
+  </div>
+  <footer>
+    <p class="footer-name">Cameron West</p>
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="bookclub.html">Book Club</a></li>
+      <li><a href="qa.html">Q&amp;A</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Cameron West. All rights reserved.</p>
+  </footer>
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    function toggleMobileNav() {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    function closeMobileNav() {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', toggleMobileNav);
+  </script>
+</body>
+</html>

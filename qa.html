@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Author Q&amp;A — Cameron West, PhD</title>
+  <meta name="description" content="Author Q&amp;A with Cameron West, PhD — coming soon." />
+  <meta name="author" content="Cameron West" />
+  <link rel="canonical" href="https://cameronwestauthor.com/qa.html" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://cameronwestauthor.com/qa.html" />
+  <meta property="og:title"       content="Author Q&amp;A — Cameron West, PhD" />
+  <meta property="og:description" content="Author Q&amp;A with Cameron West, PhD — coming soon." />
+  <meta property="og:image"       content="https://cameronwestauthor.com/img/firstpersonplural.png" />
+  <meta property="og:site_name"   content="Cameron West Author" />
+  <link rel="shortcut icon" href="img/fav.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg: #0A0A0A;
+      --color-surface: #141210;
+      --color-border: #2E2B28;
+      --color-text: #F0EDE8;
+      --color-text-muted: #D4C5B5;
+      --color-accent: #C4805A;
+      --color-accent-dark: #8B6F5E;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Lora', Georgia, serif;
+      --font-label: 'Cinzel', serif;
+      --max-width: 1100px;
+      --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: 1rem; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem var(--gutter); transition: background 0.3s, border-color 0.3s; border-bottom: 1px solid transparent; }
+    nav.scrolled { background: rgba(10,10,10,0.96); border-color: var(--color-border); backdrop-filter: blur(8px); }
+    .nav-logo { font-family: var(--font-label); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--color-text); text-decoration: none; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; position: relative; transition: color 0.2s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--color-accent); transition: width 0.25s; }
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--color-text); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: var(--color-text); transition: transform 0.35s, opacity 0.35s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; inset: 0; background: var(--color-bg); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-family: var(--font-label); font-size: 1.1rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text); text-decoration: none; }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    /* ── PAGE HEADER ── */
+    .page-header { padding: 8rem var(--gutter) 4rem; max-width: var(--max-width); margin: 0 auto; border-bottom: 1px solid var(--color-border); }
+    .page-eyebrow { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .page-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--color-accent); }
+    .page-title { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1rem; }
+    /* ── COMING SOON ── */
+    .coming-soon-wrap { max-width: var(--max-width); margin: 0 auto; padding: clamp(5rem, 12vw, 8rem) var(--gutter); text-align: center; }
+    .coming-soon-label { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1.5rem; }
+    .coming-soon-wrap h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.25rem; }
+    .coming-soon-wrap p { color: var(--color-text-muted); max-width: 480px; margin: 0 auto 2.5rem; font-size: 1.05rem; }
+    .btn-contact { display: inline-block; font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-bg); background: var(--color-accent); padding: 0.85rem 2.25rem; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-contact:hover { background: var(--color-text); transform: translateY(-1px); }
+    /* ── DIVIDER ── */
+    .section-rule { border: none; border-top: 1px solid var(--color-border); max-width: var(--max-width); margin: 0 auto; }
+    /* ── BACK LINK ── */
+    .back-link-wrap { max-width: var(--max-width); margin: 0 auto; padding: 2rem var(--gutter); }
+    .back-link-wrap a { font-family: var(--font-label); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; transition: color 0.2s; }
+    .back-link-wrap a:hover { color: var(--color-accent); }
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--color-border); padding: 3rem var(--gutter); text-align: center; }
+    .footer-name { font-family: var(--font-label); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 1.25rem; }
+    .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; list-style: none; margin-bottom: 1.5rem; }
+    .footer-nav a { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--color-accent); }
+    .footer-copy { font-size: 0.78rem; color: var(--color-accent-dark); }
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Cameron West</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="bookclub.html">Book Club</a></li>
+      <li><a href="qa.html" class="active">Q&amp;A</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="index.html#about" onclick="closeMobileNav()">About</a>
+    <a href="index.html#books" onclick="closeMobileNav()">Books</a>
+    <a href="index.html#reviews" onclick="closeMobileNav()">Reviews</a>
+    <a href="resources.html" onclick="closeMobileNav()">Resources</a>
+    <a href="bookclub.html" onclick="closeMobileNav()">Book Club</a>
+    <a href="qa.html" onclick="closeMobileNav()">Q&amp;A</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+  </div>
+  <div class="page-header">
+    <p class="page-eyebrow">Author Q&amp;A</p>
+    <h1 class="page-title">Questions &amp; Answers</h1>
+  </div>
+  <div class="coming-soon-wrap">
+    <p class="coming-soon-label">Coming Soon</p>
+    <h2>Cameron's Q&amp;A is on its way.</h2>
+    <p>Cameron will be answering questions from readers here. Have something you'd like to ask? Send it through the contact page.</p>
+    <a href="contact.html" class="btn-contact">Ask a Question</a>
+  </div>
+  <hr class="section-rule" />
+  <div class="back-link-wrap">
+    <a href="index.html">← Back to Home</a>
+  </div>
+  <footer>
+    <p class="footer-name">Cameron West</p>
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#books">Books</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="bookclub.html">Book Club</a></li>
+      <li><a href="qa.html">Q&amp;A</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Cameron West. All rights reserved.</p>
+  </footer>
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    function toggleMobileNav() {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    function closeMobileNav() {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', toggleMobileNav);
+  </script>
+</body>
+</html>
