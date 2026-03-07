@@ -585,14 +585,19 @@
       const honeypot = document.getElementById('website').value;
       if (honeypot) return;
 
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
-      window.location.href = `mailto:rikki.west@yahoo.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-      form.style.display = 'none';
-      success.classList.add('visible');
+      const submitBtn = form.querySelector('.btn-submit');
+      submitBtn.disabled = true;
+
+      fetch('send_mail.php', { method: 'POST', body: new FormData(form) })
+        .then(res => {
+          if (!res.ok) throw new Error('Server error');
+          form.style.display = 'none';
+          success.classList.add('visible');
+        })
+        .catch(() => {
+          submitBtn.disabled = false;
+          alert('Sorry, your message could not be sent. Please try again.');
+        });
     });
   </script>
 </body>
