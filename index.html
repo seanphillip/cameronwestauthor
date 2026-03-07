@@ -170,7 +170,7 @@
     .nav-links a:hover::after { width: 100%; }
 
     /* Hamburger */
-    .nav-hamburger {
+    .hamburger {
       display: none;
       flex-direction: column;
       gap: 5px;
@@ -179,15 +179,15 @@
       border: none;
       padding: 4px;
     }
-    .nav-hamburger span {
+    .hamburger span {
       display: block;
       width: 26px; height: 2px;
       background: var(--color-text);
       transition: transform var(--transition), opacity var(--transition);
     }
-    .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
     /* Mobile overlay nav */
     .nav-mobile-overlay {
@@ -214,7 +214,7 @@
 
     @media (max-width: 768px) {
       .nav-links    { display: none; }
-      .nav-hamburger { display: flex; }
+      .hamburger { display: flex; }
     }
 
     /* ========================================
@@ -966,10 +966,10 @@
     /* ========================================
        ACTIVE NAV LINK
     ======================================== */
-    .nav-links a.nav-active {
+    .nav-links a.active {
       color: var(--color-accent);
     }
-    .nav-links a.nav-active::after {
+    .nav-links a.active::after {
       width: 100%;
     }
 
@@ -1123,7 +1123,7 @@
   <!-- ========== NAVIGATION ========== -->
   <nav id="nav">
     <a href="#home" class="nav-logo">Cameron West</a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#books">Books</a></li>
@@ -1133,7 +1133,7 @@
       <li><a href="qa.html">Q&amp;A</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobileNav()">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobileNav()">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -1464,8 +1464,8 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
-          Object.values(navAnchors).forEach(a => { if (a) a.classList.remove('nav-active'); });
-          if (navAnchors[id]) navAnchors[id].classList.add('nav-active');
+          Object.values(navAnchors).forEach(a => { if (a) a.classList.remove('active'); });
+          if (navAnchors[id]) navAnchors[id].classList.add('active');
         }
       });
     }, { threshold: 0.35 });
