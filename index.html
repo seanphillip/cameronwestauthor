@@ -338,7 +338,8 @@
       border: 1px solid var(--color-accent);
       cursor: pointer;
       transition: background var(--transition), color var(--transition), transform 0.15s;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.12em;
     }
     .btn-primary:hover {
       background: #d4926b;
@@ -1032,28 +1033,6 @@
     }
 
     /* ========================================
-       BUTTON SHIMMER (btn-primary)
-    ======================================== */
-    .btn-primary {
-      overflow: hidden;
-      position: relative;
-    }
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 55%;
-      height: 100%;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.22), transparent);
-      transform: translateX(-200%);
-      transition: transform 0.55s ease;
-      pointer-events: none;
-    }
-    .btn-primary:hover::after {
-      transform: translateX(300%);
-    }
-
-    /* ========================================
        HERO QUOTE DECORATIVE MARK
     ======================================== */
     .hero-quote {
@@ -1207,7 +1186,6 @@
         <p class="hero-release">Coming May 26, 2026 &mdash; Blackstone Publishing</p>
         <div class="hero-credentials">
           <span>25th Anniversary Edition</span>
-          <span>Published in 22 Countries</span>
         </div>
         <a href="https://www.blackstonepublishing.com/products/book-kd57?variant=47124332839050" target="_blank" rel="noopener noreferrer" class="btn-primary">Pre-Order Now</a>
       </div>
