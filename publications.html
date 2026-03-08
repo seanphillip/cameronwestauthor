@@ -270,6 +270,29 @@
       flex-wrap: wrap;
       gap: 0.75rem;
     }
+    .btn-primary {
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.75rem;
+      background: var(--color-accent);
+      color: #0A0A0A;
+      border-radius: 3px;
+      border: 1px solid var(--color-accent);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #d4926b;
+      border-color: #d4926b;
+      color: #0A0A0A;
+      transform: translateY(-1px);
+    }
     .btn-book-secondary {
       font-family: var(--font-label);
       font-size: 0.65rem;
@@ -524,6 +547,9 @@
         <p class="book-desc">
           A <em>New York Times</em>, <em>Publishers Weekly</em>, and <em>USA Today</em> bestseller reaching #1 on Amazon and Barnes &amp; Noble, sold in 22 countries. Disney Studios purchased the movie rights. Cameron and Rikki appeared on <em>Oprah</em> twice.
         </p>
+        <div class="book-btns">
+          <a class="btn-primary" href="https://www.blackstonepublishing.com/products/book-kd57?variant=47124332839050" target="_blank" rel="noopener noreferrer">Pre-Order Now</a>
+        </div>
       </div>
     </article>
     <!-- ESSAYS & ARTICLES -->
