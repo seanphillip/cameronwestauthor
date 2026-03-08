@@ -4,90 +4,225 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Publications — Cameron West, PhD</title>
-  <meta name="description" content="Books by Cameron West, PhD — including First Person Plural: My Life as a Multiple (25th Anniversary Edition) and The Medici Dagger." />
-  <meta name="keywords" content="Cameron West, First Person Plural, The Medici Dagger, books, publications, DID, memoir, historical thriller" />
-  <meta name="author" content="Cameron West" />
-  <link rel="canonical" href="https://cameronwestauthor.com/publications.html" />
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://cameronwestauthor.com/publications.html" />
-  <meta property="og:title"       content="Publications — Cameron West, PhD" />
-  <meta property="og:description" content="Books by Cameron West, PhD — First Person Plural and The Medici Dagger." />
-  <meta property="og:image"       content="https://cameronwestauthor.com/img/firstpersonplural.png" />
-  <meta property="og:site_name"   content="Cameron West Author" />
-  <link rel="shortcut icon" href="img/fav.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Published works by Cameron West, PhD — books and essays including the New York Times bestseller First Person Plural, The Medici Dagger, and recent essays in Newsweek." />
+  <link rel="icon" href="img/fav.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --color-bg: #0A0A0A;
-      --color-surface: #141210;
-      --color-border: #2E2B28;
-      --color-text: #F0EDE8;
+      --color-bg:         #0A0A0A;
+      --color-surface:    #141210;
+      --color-border:     #2E2B28;
+      --color-text:       #F0EDE8;
       --color-text-muted: #D4C5B5;
-      --color-accent: #C4805A;
-      --color-accent-dark: #8B6F5E;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'Lora', Georgia, serif;
-      --font-label: 'Cinzel', serif;
-      --font-heading: 'Oswald', sans-serif;
-      --max-width: 1100px;
-      --gutter: clamp(1.5rem, 5vw, 4rem);
+      --color-accent:     #C4805A;
+      --color-accent-dark:#8B6F5E;
+      --font-display:     'Playfair Display', Georgia, serif;
+      --font-body:        'Lora', Georgia, serif;
+      --font-label:       'Cinzel', serif;
+      --font-heading:     'Oswald', sans-serif;
+      --max-width:        1100px;
+      --gutter:           clamp(1.5rem, 5vw, 4rem);
+      --transition:       0.35s ease;
     }
     html { scroll-behavior: smooth; }
-    body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: 1rem; line-height: 1.75; }
-
-    /* ── NAV ── */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2.5rem; background: rgba(10,10,10,0.97); border-bottom: 1px solid var(--color-border); }
-    .nav-logo { font-family: var(--font-label); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--color-text); text-decoration: none; text-transform: uppercase; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; position: relative; padding-bottom: 2px; transition: color 0.2s; }
-    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--color-accent); transition: width 0.25s; }
-    .nav-links a:hover { color: var(--color-text); }
-    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-    .nav-links a.active { color: var(--color-accent); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 26px; height: 2px; background: var(--color-text); transition: transform 0.35s, opacity 0.35s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-nav { display: none; position: fixed; inset: 0; background: var(--color-bg); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-family: var(--font-label); font-size: 1.1rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text); text-decoration: none; }
-    @media (max-width: 680px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-
-    /* ── PAGE HEADER ── */
-    .page-header { padding: 8rem var(--gutter) 4rem; max-width: var(--max-width); margin: 0 auto; border-bottom: 1px solid var(--color-border); }
-    .page-eyebrow { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
-    .page-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--color-accent); }
-    .page-title { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1rem; }
-    .page-intro { color: var(--color-text-muted); max-width: 640px; font-size: 1.05rem; }
-
-    /* ── MAIN ── */
-    .pub-main { max-width: var(--max-width); margin: 0 auto; padding: clamp(3rem, 8vw, 5rem) var(--gutter); display: flex; flex-direction: column; gap: 4rem; }
-
-    /* ── BOOK CARD ── */
-    .book-card {
+    /* grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { color: var(--color-text); }
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(10,10,10,0.97);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav-logo {
+      font-family: var(--font-label);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--color-accent);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--color-accent); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--color-accent); }
+    .nav-links a.active::after { width: 100%; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--color-text);
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    /* mobile nav — same pattern as resources.html */
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(10,10,10,0.97);
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .nav-links.open a {
+      font-family: var(--font-label);
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+    .nav-links.open a:hover { color: var(--color-accent); }
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 8rem var(--gutter) 4rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .page-eyebrow {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .page-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 2rem; height: 1px;
+      background: var(--color-accent);
+    }
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .page-intro {
+      color: var(--color-text-muted);
+      max-width: 640px;
+      font-size: 1.05rem;
+    }
+    /* ── MAIN ── */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem var(--gutter) 2rem;
+    }
+    /* ── SECTION HEADERS ── */
+    .pub-section-label {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .pub-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+    /* ── FEATURED BOOK CARD ── */
+    .book-featured {
+      display: grid;
+      grid-template-columns: 200px 1fr;
       gap: 3rem;
-      align-items: flex-start;
-      padding: 2.5rem;
+      align-items: start;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
-      border-top: 3px solid var(--color-accent);
+      border-radius: 4px;
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
     }
-    .book-card.secondary { border-top-color: var(--color-accent-dark); }
-    .book-cover-wrap { flex-shrink: 0; }
-    .book-cover {
-      width: 180px;
-      display: block;
-      box-shadow: -10px 12px 40px rgba(0,0,0,0.7);
+    .book-featured::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--color-accent);
     }
-    .book-body { flex: 1; }
+    .book-featured .cover {
+      width: 100%;
+      box-shadow: -6px 12px 40px rgba(0,0,0,0.7);
+      border-radius: 2px;
+    }
     .book-tag {
       display: inline-block;
       font-family: var(--font-label);
@@ -95,84 +230,282 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       padding: 0.25rem 0.65rem;
-      background: rgba(196,128,90,0.12);
+      border-radius: 999px;
+      background: rgba(196,128,90,0.15);
       color: var(--color-accent);
-      border: 1px solid rgba(196,128,90,0.3);
+      border: 1px solid rgba(196,128,90,0.35);
       margin-bottom: 0.85rem;
     }
-    .book-title {
-      font-family: var(--font-heading);
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 0.25rem;
-    }
-    .book-subtitle {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--color-text-muted);
-      margin-bottom: 1.25rem;
-    }
-    .book-meta {
+    .book-genre {
       font-family: var(--font-label);
       font-size: 0.6rem;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--color-accent-dark);
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .book-title-lg {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+    .book-publisher {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-label);
+      letter-spacing: 0.06em;
       margin-bottom: 1.25rem;
     }
     .book-desc {
+      font-size: 0.92rem;
       color: var(--color-text-muted);
-      font-size: 0.97rem;
       line-height: 1.8;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
     }
-    .book-divider { border: none; border-top: 1px solid var(--color-border); margin: 1.25rem 0; }
-    .book-btns { display: flex; flex-wrap: wrap; gap: 0.65rem; }
-    .btn-buy {
-      display: inline-block;
+    .book-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn-book-primary {
       font-family: var(--font-label);
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 0.55rem 1.1rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      border: 1px solid var(--color-accent);
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition);
+    }
+    .btn-book-primary:hover {
+      background: #d4926b;
+      border-color: #d4926b;
+      color: var(--color-bg);
+    }
+    .btn-book-secondary {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      color: var(--color-accent);
       border: 1px solid var(--color-border);
+      border-radius: 3px;
+      text-decoration: none;
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .btn-book-secondary:hover {
+      border-color: var(--color-accent);
+      color: var(--color-text);
+    }
+    /* ── SECONDARY BOOK CARD ── */
+    .book-secondary {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 4rem;
+      opacity: 0.95;
+    }
+    .book-secondary .cover {
+      width: 100%;
+      box-shadow: -4px 8px 28px rgba(0,0,0,0.6);
+      border-radius: 2px;
+    }
+    .book-title-sm {
+      font-family: var(--font-heading);
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+    .book-pull-quote {
+      font-style: italic;
+      font-size: 0.88rem;
+      color: var(--color-accent);
+      border-left: 2px solid var(--color-accent);
+      padding-left: 1rem;
+      margin: 1rem 0 1.25rem;
+      line-height: 1.65;
+    }
+    /* ── SECTION RULE ── */
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+      opacity: 0.3;
+      margin: 1rem 0 4rem;
+    }
+    /* ── ESSAYS SECTION ── */
+    .author-callout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      background: var(--color-surface);
+      border-left: 4px solid var(--color-accent);
+      padding: 2.25rem 2.75rem;
+      margin-bottom: 4rem;
+    }
+    .author-callout-label {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .author-callout-label::before {
+      content: '';
+      display: inline-block;
+      width: 1.5rem;
+      height: 1px;
+      background: var(--color-accent);
+    }
+    .author-callout-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-text);
+    }
+    .author-callout-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .author-callout-link {
+      flex-shrink: 0;
+      font-family: var(--font-label);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      padding: 0.8rem 1.75rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background var(--transition);
+    }
+    .author-callout-link:hover {
+      background: #d4926b;
+      color: var(--color-bg);
+    }
+    @media (max-width: 640px) {
+      .author-callout { flex-direction: column; align-items: flex-start; padding: 1.75rem; }
+    }
+    /* ── BACK LINK ── */
+    .back-link-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem var(--gutter) 4rem;
+    }
+    .back-link {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       color: var(--color-text-muted);
       text-decoration: none;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
     }
-    .btn-buy:hover { border-color: var(--color-accent); color: var(--color-accent); background: rgba(196,128,90,0.06); }
-    .btn-buy.primary { background: var(--color-accent); color: var(--color-bg); border-color: var(--color-accent); font-weight: 600; }
-    .btn-buy.primary:hover { background: #d4926b; border-color: #d4926b; color: var(--color-bg); }
-
-    /* ── SECTION RULE ── */
-    .section-rule { border: none; border-top: 1px solid var(--color-border); max-width: var(--max-width); margin: 0 auto; }
-
-    /* ── BACK LINK ── */
-    .back-link-wrap { max-width: var(--max-width); margin: 0 auto; padding: 2rem var(--gutter); }
-    .back-link-wrap a { font-family: var(--font-label); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; transition: color 0.2s; }
-    .back-link-wrap a:hover { color: var(--color-accent); }
-
+    .back-link:hover { color: var(--color-accent); }
+    .back-link::before { content: '←'; }
     /* ── FOOTER ── */
-    footer { border-top: 1px solid var(--color-border); padding: 3rem var(--gutter); text-align: center; }
-    .footer-name { font-family: var(--font-label); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 1.25rem; }
-    .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; list-style: none; margin-bottom: 1.5rem; }
-    .footer-nav a { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; transition: color 0.2s; }
+    footer {
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      border-top: 1px solid transparent;
+      background: linear-gradient(to bottom, var(--color-bg), #050505);
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+      opacity: 0.4;
+    }
+    .footer-name {
+      font-family: var(--font-label);
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.25rem;
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav a {
+      font-family: var(--font-label);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
     .footer-nav a:hover { color: var(--color-accent); }
-    .footer-copy { font-size: 0.78rem; color: var(--color-accent-dark); }
-
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      opacity: 0.55;
+    }
+    /* ── FADE UP ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
     /* ── RESPONSIVE ── */
-    @media (max-width: 680px) {
-      .book-card { flex-direction: column; padding: 1.75rem; gap: 1.75rem; }
-      .book-cover { width: 140px; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .book-featured,
+      .book-secondary {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding: 1.75rem;
+      }
+      .book-featured .cover { max-width: 160px; }
+      .book-secondary .cover { max-width: 130px; }
+      .articles-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <nav id="nav">
-    <a href="index.html" class="nav-logo">Cameron West</a>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Cameron West</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="publications.html" class="active">Publications</a></li>
@@ -181,70 +514,75 @@
       <li><a href="qa.html">Q&amp;A</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
   </nav>
-
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="publications.html">Publications</a>
-    <a href="resources.html">Resources</a>
-    <a href="bookclub.html">Book Club</a>
-    <a href="qa.html">Q&amp;A</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <div class="page-header">
-    <p class="page-eyebrow">Books by Cameron West</p>
+  <!-- PAGE HEADER -->
+  <header class="page-header fade-up">
+    <p class="page-eyebrow">Cameron West, PhD</p>
     <h1 class="page-title">Publications</h1>
-    <p class="page-intro">Cameron West is the author of two books — a landmark memoir that changed how the world understands Dissociative Identity Disorder, and a sweeping historical thriller set in Renaissance Italy.</p>
-  </div>
-
-  <main class="pub-main">
-
-    <!-- ── FIRST PERSON PLURAL ── -->
-    <article class="book-card">
-      <div class="book-cover-wrap">
-        <img src="img/firstpersonplural.png" alt="First Person Plural book cover" class="book-cover" loading="lazy" />
-      </div>
-      <div class="book-body">
-        <span class="book-tag">★ New York Times Bestseller</span>
-        <h2 class="book-title">First Person Plural</h2>
-        <p class="book-subtitle">My Life as a Multiple — 25th Anniversary Edition</p>
-        <p class="book-meta">Memoir &nbsp;·&nbsp; Blackstone Publishing &nbsp;·&nbsp; May 26, 2026</p>
-        <p class="book-desc">Described as "a page-turning journey through hell" by <em>Entertainment Weekly</em>, this 25th Anniversary Edition is a riveting, spellbinding memoir that boldly illuminates the truth behind Dissociative Identity Disorder and reveals the deep humanity behind the condition.</p>
-        <p class="book-desc">Originally published in 1999, it became a <em>New York Times</em>, <em>Publishers Weekly</em>, and <em>USA Today</em> bestseller — reaching #1 on Amazon and Barnes &amp; Noble and sold in 22 countries. This new edition features a powerful Epilogue presenting the first physiological evidence of alter personalities via EEG brain wave patterns, along with an overview of current research on a condition now known to affect an estimated 100 million people worldwide.</p>
-      </div>
-    </article>
-
-    <!-- ── THE MEDICI DAGGER ── -->
-    <article class="book-card secondary">
-      <div class="book-cover-wrap">
-        <img src="img/MD-cover.png" alt="The Medici Dagger book cover" class="book-cover" loading="lazy" />
-      </div>
-      <div class="book-body">
-        <span class="book-tag">Historical Thriller</span>
-        <h2 class="book-title">The Medici Dagger</h2>
-        <p class="book-subtitle">A Novel</p>
-        <p class="book-meta">Fiction &nbsp;·&nbsp; Ballantine Books &nbsp;·&nbsp; 2001</p>
-        <p class="book-desc">A gripping historical thriller set against the opulent and treacherous world of Renaissance Italy. When a priceless dagger commissioned by the Medici family resurfaces after five centuries, it sets off a deadly race across continents — drawing together art, obsession, and murder in a novel that moves with the pace of a thriller and the richness of a history.</p>
-        <p class="book-desc">Cameron West's fiction debut showcases the same vivid, fearless storytelling that defined his memoir — this time in a world of intrigue, beauty, and mortal consequence.</p>
-        <hr class="book-divider" />
+    <p class="page-intro">Books and essays from a restless mind — spanning memoir, thriller fiction, and personal writing on the inner life.</p>
+  </header>
+  <!-- MAIN -->
+  <main>
+    <!-- BOOKS -->
+    <div class="pub-section-label fade-up">Books</div>
+    <!-- FIRST PERSON PLURAL -->
+    <article class="book-featured fade-up">
+      <img class="cover" src="img/firstpersonplural.png" alt="First Person Plural book cover" loading="lazy" />
+      <div>
+        <span class="book-tag">★ Featured — 25th Anniversary Edition</span>
+        <p class="book-genre">Memoir · Psychology</p>
+        <h2 class="book-title-lg">First Person Plural</h2>
+        <p class="book-publisher">Blackstone Publishing · May 26, 2026 · Originally published 1999</p>
+        <p class="book-desc">
+          Described as "a page-turning journey through hell" by <em>Entertainment Weekly</em>, this 25th Anniversary Edition is a riveting, spellbinding memoir that boldly illuminates the truth behind Dissociative Identity Disorder and reveals the deep humanity behind the condition. Featuring a new Epilogue with the first physiological evidence of alter personalities via EEG brain wave patterns, and an overview of current research on a condition now known to affect an estimated 100 million people worldwide.
+        </p>
+        <p class="book-desc">
+          A <em>New York Times</em>, <em>Publishers Weekly</em>, and <em>USA Today</em> bestseller reaching #1 on Amazon and Barnes &amp; Noble, sold in 22 countries. Disney Studios purchased the movie rights. Cameron and Rikki appeared on <em>Oprah</em> twice.
+        </p>
         <div class="book-btns">
-          <a href="https://www.amazon.com/Medici-Dagger-Cameron-West-ebook/dp/B000FC0RM4?ref_=ast_author_dp&th=1&psc=1" target="_blank" rel="noopener" class="btn-buy primary">Order on Amazon</a>
-          <a href="https://www.barnesandnoble.com/w/the-medici-dagger-cameron-west/1100307529" target="_blank" rel="noopener" class="btn-buy">Barnes &amp; Noble</a>
+          <a class="btn-book-primary" href="https://www.amazon.com/First-Person-Plural-Life-Multiple/dp/1665054689" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn-book-secondary" href="https://www.barnesandnoble.com/w/first-person-plural-cameron-west/1100399670" target="_blank" rel="noopener">Barnes &amp; Noble</a>
         </div>
       </div>
     </article>
-
+    <!-- THE MEDICI DAGGER -->
+    <article class="book-secondary fade-up">
+      <img class="cover" src="img/MD-cover.png" alt="The Medici Dagger book cover" loading="lazy" />
+      <div>
+        <p class="book-genre">Fiction · Mystery &amp; Thriller</p>
+        <h2 class="book-title-sm">The Medici Dagger</h2>
+        <p class="book-publisher">Atria Books · January 17, 2002</p>
+        <p class="book-pull-quote">"Intellectually provocative… surprising and chilling." — <em>Pittsburgh Post-Gazette</em></p>
+        <p class="book-desc">
+          1491: Leonardo da Vinci looks upon his most dangerous invention and knows he must hide it from the world. Five centuries later, the race to find it begins. When a plane goes down over the Atlantic carrying a page from da Vinci's journals — and a museum curator's home burns to the ground — the tragedies seem unconnected. Twenty years later, Hollywood stuntman Reb Barnett refuses to believe they were accidents. He's sent to Italy on a desperate quest to find da Vinci's Circles of Truth, a coded 15th-century map pointing to the Medici Dagger — a weapon so remarkable it's worth a fortune to modern arms dealers, and worth even more to Reb as his only link to the truth about his father's death.
+        </p>
+        <div class="book-btns">
+          <a class="btn-book-secondary" href="https://www.amazon.com/Medici-Dagger-Cameron-West-ebook/dp/B000FC0RM4?ref_=ast_author_dp&th=1&psc=1" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn-book-secondary" href="https://www.barnesandnoble.com/w/the-medici-dagger-cameron-west/1100307529" target="_blank" rel="noopener">Barnes &amp; Noble</a>
+        </div>
+      </div>
+    </article>
+    <!-- DIVIDER -->
+    <div class="section-rule"></div>
+    <!-- ESSAYS & ARTICLES -->
+    <div class="pub-section-label fade-up">Essays &amp; Articles</div>
+    <div class="author-callout fade-up">
+      <div>
+        <p class="author-callout-label">From the Author</p>
+        <h3 class="author-callout-title">Cameron's Recent Essay in Newsweek</h3>
+        <p class="author-callout-desc">A deeply personal account of the day a new alter personality emerged — published March 2025.</p>
+      </div>
+      <a href="https://www.newsweek.com/dissociative-identity-disorder-cameron-west-11551919" target="_blank" rel="noopener" class="author-callout-link">Read the Essay →</a>
+    </div>
   </main>
-
-  <hr class="section-rule" />
+  <!-- BACK LINK -->
   <div class="back-link-wrap">
-    <a href="index.html">← Back to Home</a>
+    <a class="back-link" href="index.html">Back to Home</a>
   </div>
-
+  <!-- FOOTER -->
   <footer>
     <p class="footer-name">Cameron West</p>
     <ul class="footer-nav">
@@ -255,24 +593,36 @@
       <li><a href="qa.html">Q&amp;A</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <p class="footer-copy">&copy; 2026 Cameron West. All rights reserved.</p>
+    <p class="footer-copy">© 2026 Cameron West. All rights reserved.</p>
   </footer>
-
   <script>
+    /* ── HAMBURGER / MOBILE NAV ── */
     const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
+    const navLinks  = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
+      const open = navLinks.classList.toggle('open');
       hamburger.classList.toggle('open', open);
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    mobileNav.querySelectorAll('a').forEach(a => {
+    /* close on link tap */
+    navLinks.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
+        navLinks.classList.remove('open');
         hamburger.classList.remove('open');
         document.body.style.overflow = '';
       });
     });
+    /* ── FADE UP ON SCROLL ── */
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
   </script>
 </body>
 </html>
