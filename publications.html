@@ -296,21 +296,24 @@
       transform: translateY(-1px);
     }
     .btn-book-secondary {
-      font-family: var(--font-label);
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       padding: 0.75rem 1.5rem;
-      background: transparent;
-      color: var(--color-accent);
-      border: 1px solid var(--color-border);
+      background: var(--color-accent);
+      color: #0A0A0A;
+      border: 1px solid var(--color-accent);
       border-radius: 3px;
       text-decoration: none;
-      transition: border-color var(--transition), color var(--transition);
+      display: inline-block !important;
+      width: auto !important;
+      transition: background var(--transition), color var(--transition);
     }
     .btn-book-secondary:hover {
-      border-color: var(--color-accent);
-      color: var(--color-text);
+      background: #d4926b;
+      border-color: #d4926b;
+      color: #0A0A0A;
     }
     /* ── SECONDARY BOOK CARD ── */
     .book-secondary {
@@ -577,8 +580,8 @@
           1491: Leonardo da Vinci looks upon his most dangerous invention and knows he must hide it from the world. Five centuries later, the race to find it begins. When a plane goes down over the Atlantic carrying a page from da Vinci's journals — and a museum curator's home burns to the ground — the tragedies seem unconnected. Twenty years later, Hollywood stuntman Reb Barnett refuses to believe they were accidents. He's sent to Italy on a desperate quest to find da Vinci's Circles of Truth, a coded 15th-century map pointing to the Medici Dagger — a weapon so remarkable it's worth a fortune to modern arms dealers, and worth even more to Reb as his only link to the truth about his father's death.
         </p>
         <div class="book-btns">
-          <a class="btn-primary" href="https://www.amazon.com/Medici-Dagger-Cameron-West-ebook/dp/B000FC0RM4?tag=ustxtaddt-20" target="_blank" rel="noopener">Buy on Amazon</a>
-          <a class="btn-primary" href="https://www.barnesandnoble.com/w/the-medici-dagger-cameron-west/1100307529" target="_blank" rel="noopener">Barnes &amp; Noble</a>
+          <a class="btn-book-secondary" href="https://www.amazon.com/Medici-Dagger-Cameron-West-ebook/dp/B000FC0RM4?tag=ustxtaddt-20" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn-book-secondary" href="https://www.barnesandnoble.com/w/the-medici-dagger-cameron-west/1100307529" target="_blank" rel="noopener">Barnes &amp; Noble</a>
         </div>
       </div>
     </article>
