@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Author Q&amp;A — Cameron West, PhD</title>
-  <meta name="description" content="Author Q&amp;A with Cameron West, PhD — coming soon." />
+  <meta name="description" content="Cameron West answers questions from readers, journalists, and the DID community — on the book, his journey, and life today." />
+  <meta name="keywords" content="Cameron West, First Person Plural, Q&A, interview, DID, Dissociative Identity Disorder" />
   <meta name="author" content="Cameron West" />
   <link rel="canonical" href="https://cameronwestauthor.com/qa.html" />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://cameronwestauthor.com/qa.html" />
   <meta property="og:title"       content="Author Q&amp;A — Cameron West, PhD" />
-  <meta property="og:description" content="Author Q&amp;A with Cameron West, PhD — coming soon." />
+  <meta property="og:description" content="Cameron West answers questions from readers, journalists, and the DID community." />
   <meta property="og:image"       content="https://cameronwestauthor.com/img/firstpersonplural.png" />
   <meta property="og:site_name"   content="Cameron West Author" />
   <link rel="shortcut icon" href="img/fav.png" />
@@ -61,13 +62,31 @@
     .page-eyebrow { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
     .page-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--color-accent); }
     .page-title { font-family: 'Oswald', sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1rem; }
-    /* ── COMING SOON ── */
-    .coming-soon-wrap { max-width: var(--max-width); margin: 0 auto; padding: clamp(5rem, 12vw, 8rem) var(--gutter); text-align: center; }
-    .coming-soon-label { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1.5rem; }
-    .coming-soon-wrap h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.25rem; }
-    .coming-soon-wrap p { color: var(--color-text-muted); max-width: 480px; margin: 0 auto 2.5rem; font-size: 1.05rem; }
-    .btn-contact { display: inline-block; font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-bg); background: var(--color-accent); padding: 0.85rem 2.25rem; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .btn-contact:hover { background: var(--color-text); transform: translateY(-1px); }
+    .page-intro { color: var(--color-text-muted); max-width: 640px; font-size: 1.05rem; }
+    /* ── MAIN ── */
+    .bookclub-main { max-width: var(--max-width); margin: 0 auto; padding: clamp(3rem, 8vw, 5rem) var(--gutter); }
+    /* ── INTRO NOTE ── */
+    .guide-intro { background: var(--color-surface); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); padding: 1.75rem 2rem; border-radius: 2px; margin-bottom: 3.5rem; }
+    .guide-intro p { color: var(--color-text-muted); font-size: 1.0rem; }
+    /* ── SECTION LABEL ── */
+    .questions-label { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
+    .questions-label::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--color-accent); }
+    /* ── INDIVIDUAL QUESTIONS ── */
+    .question-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .question-list li { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 2px; transition: border-color 0.2s; }
+    .question-list li:hover { border-color: var(--color-accent-dark); }
+    .q-num { font-family: var(--font-label); font-size: 0.65rem; color: var(--color-accent); letter-spacing: 0.1em; padding-top: 0.2rem; min-width: 1.5rem; }
+    /* ── Q&A BODY RULES ── */
+    .qa-body { flex: 1; }
+    .qa-question { font-size: 0.97rem; font-weight: 600; color: var(--color-text); line-height: 1.6; margin-bottom: 0.65rem; }
+    .qa-answer { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.78; margin-bottom: 0.5rem; }
+    .qa-answer:last-child { margin-bottom: 0; }
+    /* ── ASK A QUESTION CTA ── */
+    .ask-wrap { margin-top: 4rem; padding: 3rem; background: var(--color-surface); border: 1px solid var(--color-border); text-align: center; }
+    .ask-wrap h2 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .ask-wrap p { color: var(--color-text-muted); max-width: 520px; margin: 0 auto 1.75rem; font-size: 0.97rem; }
+    .btn-ask { display: inline-block; font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-bg); background: var(--color-accent); padding: 0.85rem 2.25rem; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-ask:hover { background: var(--color-text); transform: translateY(-1px); }
     /* ── DIVIDER ── */
     .section-rule { border: none; border-top: 1px solid var(--color-border); max-width: var(--max-width); margin: 0 auto; }
     /* ── BACK LINK ── */
@@ -109,13 +128,85 @@
   <div class="page-header">
     <p class="page-eyebrow">Author Q&amp;A</p>
     <h1 class="page-title">Questions &amp; Answers</h1>
+    <p class="page-intro">Cameron answers questions from readers, journalists, and the DID community — on the book, his journey, and life today.</p>
   </div>
-  <div class="coming-soon-wrap">
-    <p class="coming-soon-label">Coming Soon</p>
-    <h2>Cameron's Q&amp;A is on its way.</h2>
-    <p>Cameron will be answering questions from readers here. Have something you'd like to ask? Send it through the contact page.</p>
-    <a href="contact.html" class="btn-contact">Ask a Question</a>
-  </div>
+  <main class="bookclub-main">
+    <div class="guide-intro">
+      <p>The following questions were asked of Cameron in interviews, by readers, and through the press surrounding the 25th anniversary edition of <em>First Person Plural</em>.</p>
+    </div>
+    <p class="questions-label">Questions &amp; Answers</p>
+    <ul class="question-list">
+      <li>
+        <span class="q-num">01</span>
+        <div class="qa-body">
+          <p class="qa-question">When first published in 1999, your book shocked the world, as many people were unaware of DID. What was it like to try and explain your story?</p>
+          <p class="qa-answer">When <em>First Person Plural</em> was published, Rikki and I were still reeling from my diagnosis. We were surprised to discover how little people knew about the condition — even clinicians. It was not well understood and there was even skepticism about the validity of the diagnosis. We really wanted to help educate the public, particularly after discovering that it wasn't as rare as people thought. It was hurtful and discouraging when people did not believe us and even accused me of acting. I do believe that we helped many people to understand DID and provided support to those who were also struggling with the condition.</p>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">02</span>
+        <div class="qa-body">
+          <p class="qa-question">How did the media react to your experiences? Were most people understanding?</p>
+          <p class="qa-answer">For the most part the media was very empathetic and supportive, though there were naysayers as there always are. And the outpouring from the public was immediate and extremely positive. I think that the story resonated with many people because we were just a family dealing with adversity, something everyone can relate to. And Rikki's unending love and support was inspirational. I've always said it's really a love story.</p>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">03</span>
+        <div class="qa-body">
+          <p class="qa-question">What stereotypical misunderstandings do people exhibit when interacting with somebody diagnosed with DID?</p>
+          <p class="qa-answer">I think a lot of people are just hesitant when confronted with a multiple because it is such an unusual condition. There is fear that you won't know how to react or interact with an alter. But it's remarkable how comfortable people become when they have a chance to get to know someone with DID.</p>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">04</span>
+        <div class="qa-body">
+          <p class="qa-question">What does it mean to the DID community for you to have spoken about your experiences on the Oprah Winfrey Show?</p>
+          <p class="qa-answer">I think it was huge. People with DID had, at that time, very little interaction with one another and few places to meet. Many were misdiagnosed or had difficulty finding a therapist. I was fortunate to find a support group in Oakland. I think bringing the condition to light, particularly with Oprah's reach, was a significant shoutout to other multiples that they were not alone — and to clinicians who needed to familiarize themselves with treating the disorder.</p>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">05</span>
+        <div class="qa-body">
+          <p class="qa-question">Throughout your harrowing ordeal, your family was a constant. Your wife Rikki and your son have long been by your side. Tell us more about the impact your family made on your mental health journey.</p>
+          <p class="qa-answer">My family saved my life. I'm sure of that. I don't know how I would have gotten through the initial years of recovery without them. Rikki's love held me up through all of the pain, denial, hospitalizations… everything. And my need to be a Dad, to be present for my son helped to keep me stable and on a healing path. They are still my rocks, along with my daughter-in-law and a little boy who calls me Poppy.</p>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">06</span>
+        <div class="qa-body">
+          <p class="qa-question">What has changed in our society and in medical research over the last 25 years when it comes to DID? Why is your book even more relevant today than when first published?</p>
+          <p class="qa-answer">There is a far greater understanding of DID now than when I was diagnosed. It was thought to be rare and bizarre, but now it is understood to be a type of post-traumatic stress disorder that afflicts many people who were traumatized as children. Of particular note is the research done by the CDC and Kaiser Permanente into Adverse Childhood Events (ACEs), which led to a greater understanding of the extent and nature of childhood abuse and resulted in the development of early detection programs and new treatment modalities for trauma-based consequences.</p>
+          <p class="qa-answer">I am hopeful that the 25th anniversary edition of <em>First Person Plural</em> will find a new audience of people who would like to learn of the condition or who are struggling with it themselves. It's always good to keep it in the public consciousness, particularly since it is far more pervasive than people imagine.</p>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">07</span>
+        <div class="qa-body">
+          <p class="qa-question">Since the original publication, EEG brain wave pattern recordings of your brain have led to some decisive and startling revelations. Please tell us more about that.</p>
+          <p class="qa-answer">As part of a program on the nature of the mind by the Japanese Broadcasting Corporation, I underwent EEG mapping of my brain. The results were astounding to me. My brain wave patterns differed from those of my alters, who were called out individually, and they each had distinctive EEG patterns. My adult alters' patterns were those of adults. My child alters had patterns that were childlike. To me it offered the first physiological proof that DID exists, and it did a great deal at the time to dispel the denial I was experiencing.</p>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">08</span>
+        <div class="qa-body">
+          <p class="qa-question">How have your symptoms of DID changed over the last quarter of a century? Do you still experience 24 personalities?</p>
+          <p class="qa-answer">The healing process was long and slow, but I can say with certainty that I have come a long way in recovering from the damage that was done by my early abuse. I spent many years in therapy and over time most of my alters retreated and became part of me. There are a few who still live in the corners of my mind. Clay comes out occasionally to have some ice cream or candy at Halloween. I'll always be a multiple, but I'm as emotionally healed as one can be.</p>
+        </div>
+      </li>
+      <li>
+        <span class="q-num">09</span>
+        <div class="qa-body">
+          <p class="qa-question">You're not just a writer of nonfiction, but of fiction as well, such as your novel <em>The Medici Dagger</em>, which came out in 2001. What do you think you'll write next, if anything?</p>
+          <p class="qa-answer">I do love to write. I hadn't written anything for some time, but Rikki and I are working at the moment on two projects: a sequel to <em>The Medici Dagger</em> and a YA novel about a young teen with DID. Updates to follow!</p>
+        </div>
+      </li>
+    </ul>
+    <div class="ask-wrap">
+      <h2>Have a Question for Cameron?</h2>
+      <p>Cameron reads messages from readers personally. If you have a question you'd like him to consider for a future Q&amp;A, reach out directly.</p>
+      <a href="contact.html?subject=Reader+Question" class="btn-ask">Ask a Question</a>
+    </div>
+  </main>
   <hr class="section-rule" />
   <div class="back-link-wrap">
     <a href="index.html">← Back to Home</a>
