@@ -680,6 +680,19 @@
       margin: 0;
     }
 
+    .editorial-card--featured {
+      grid-column: 1 / -1;
+      text-align: center;
+      border-top: 3px solid var(--color-accent);
+    }
+    .editorial-card--featured blockquote {
+      border-left: none;
+      padding-left: 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
     @media (max-width: 768px) {
       .editorial-grid { grid-template-columns: 1fr; }
     }
@@ -1298,6 +1311,10 @@
 
     <!-- Editorial Cards -->
     <div class="editorial-grid">
+      <div class="editorial-card editorial-card--featured fade-up">
+        <p class="editorial-source">Kirkus Reviews</p>
+        <blockquote>"For those who found <em>Sybil</em> or <em>The Three Faces of Eve</em> believable and engrossing, this account will be even more so."</blockquote>
+      </div>
       <div class="editorial-card fade-up">
         <p class="editorial-source">Publisher's Weekly</p>
         <blockquote>"West compellingly recounts his journey toward sanity. Readers who must cope with DID or other debilitating mental illnesses will appreciate West's honesty and insight about the subject."</blockquote>
