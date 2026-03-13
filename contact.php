@@ -1,6 +1,6 @@
 <?php
     $from = 'info@cameronwestauthor.com';
-    $to = 'info@cameronwestauthor.com';
+    $to = 'authorcameronwest@yahoo.com';
     $okMessage = "Thank you, I will get back to you soon!";
     $subject = 'New message from contact form';
     $name = $_POST["fname"];

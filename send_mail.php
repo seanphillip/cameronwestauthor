@@ -6,7 +6,7 @@
  */
 
 // ─── CONFIGURATION ────────────────────────────────────────────────────────────
-$to_email   = 'rikki.west@yahoo.com';       // ← CHANGE THIS to Cameron's real email
+$to_email   = 'authorcameronwest@yahoo.com';
 $from_name  = 'CW Author Contact Form';
 $subject_prefix = '[cameronwestauthor.com] ';
 // ──────────────────────────────────────────────────────────────────────────────
