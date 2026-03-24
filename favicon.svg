@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400&amp;display=swap');
+    </style>
+  </defs>
+  <rect width="32" height="32" fill="#0A0A0A"/>
+  <text x="16" y="23" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-size="14" font-weight="400" fill="#F0EDE8" letter-spacing="2">CW</text>
+</svg>
