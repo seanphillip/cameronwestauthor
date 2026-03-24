@@ -161,4 +161,12 @@ See `CAMERON_WEST_PROJECT_BRIEF.md` for the complete design brief including mood
 
 ---
 
+## Change Log
+
+| Date | Category | Notes |
+|------|----------|-------|
+| Mar 2026 | Repo cleanup | Removed 239 legacy files — Bootstrap, jQuery plugins, Colorlib template assets, Font Awesome, Linearicons. Repo reduced from ~280 to 41 tracked files. All styles inline in HTML. |
+
+---
+
 *Last updated: March 2026*
