@@ -1195,6 +1195,200 @@
       text-transform: uppercase;
       color: var(--color-text-muted);
     }
+
+    /* ========================================
+       IN THE MEDIA
+    ======================================== */
+    #media {
+      background: var(--color-surface);
+      padding: var(--section-pad);
+    }
+    .media-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .media-headline {
+      font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+      margin-bottom: 3rem;
+    }
+    .media-sub-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .media-sub-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+    .media-sub-label.coming-soon {
+      color: var(--color-text-muted);
+      opacity: 0.65;
+    }
+    .media-videos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+    .media-video-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .media-video-item .video-embed-wrap {
+      max-width: 100%;
+      margin: 0;
+    }
+    .media-caption {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+    .media-link-card {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 1rem;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      text-decoration: none;
+      transition: border-color var(--transition), background var(--transition);
+      color: inherit;
+    }
+    .media-link-card:hover {
+      border-color: var(--color-accent);
+      background: rgba(196,128,90,0.04);
+      color: inherit;
+    }
+    .media-outlet-badge {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      padding: 0.3rem 0.85rem;
+      border: 1px solid rgba(196,128,90,0.4);
+      border-radius: 999px;
+    }
+    .media-link-card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.35;
+    }
+    .media-link-card-title em { font-style: italic; color: var(--color-accent); }
+    .media-link-btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      padding: 0.5rem 1.25rem;
+      border: 1px solid rgba(196,128,90,0.4);
+      border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .media-link-card:hover .media-link-btn {
+      background: var(--color-accent);
+      color: #0A0A0A;
+      border-color: var(--color-accent);
+    }
+    .essays-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .essay-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-top: 3px solid var(--color-accent);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      text-decoration: none;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .essay-card:hover {
+      border-color: var(--color-accent);
+      background: rgba(196,128,90,0.04);
+    }
+    .essay-outlet {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+    .essay-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.35;
+      flex: 1;
+    }
+    .essay-link {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: auto;
+    }
+    .essay-card:hover .essay-link { color: var(--color-text); }
+    .coming-soon-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .coming-soon-list li {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      opacity: 0.45;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .coming-soon-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      opacity: 0.5;
+    }
+    @media (max-width: 768px) {
+      .media-videos-grid { grid-template-columns: 1fr; }
+      .essays-grid       { grid-template-columns: 1fr; }
+      .media-link-card   { aspect-ratio: auto; min-height: 200px; }
+    }
   </style>
 </head>
 <body>
@@ -1205,6 +1399,7 @@
   <!-- ========== MOBILE NAV OVERLAY ========== -->
   <div class="nav-mobile-overlay" id="mobileNav">
     <a href="#home"             onclick="closeMobileNav()">Home</a>
+    <a href="#media"            onclick="closeMobileNav()">In The Media</a>
     <a href="publications.html" onclick="closeMobileNav()">Publications</a>
     <a href="resources.html"    onclick="closeMobileNav()">Resources</a>
     <a href="bookclub"     onclick="closeMobileNav()">Book Club</a>
@@ -1217,6 +1412,7 @@
     <a href="#home" class="nav-logo">Cameron West</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
+      <li><a href="#media">In The Media</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="resources.html">Resources</a></li>
       <li><a href="bookclub">Book Club</a></li>
@@ -1407,20 +1603,88 @@
 
   <hr class="section-rule" />
 
-  <!-- ========== VIDEO ========== -->
-  <section id="video">
-    <div class="video-inner fade-up">
-      <p class="section-eyebrow">Watch</p>
-      <h2 class="section-h2">Cameron West in Conversation</h2>
-      <div class="video-embed-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/6nfoyoTxpn0"
-          title="Cameron West in Conversation"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
+  <!-- ========== PULL QUOTE ========== -->
+  <section id="pullquote">
+    <div class="pullquote-inner fade-up">
+      <span class="pullquote-mark">&#8220;</span>
+      <p class="pullquote-text">"Fascinating&hellip; I hope you'll read it!"</p>
+      <div class="pullquote-rule"></div>
+      <p class="pullquote-attr">— Oprah Winfrey</p>
     </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- ========== IN THE MEDIA ========== -->
+  <section id="media">
+    <div class="media-inner">
+      <div class="fade-up">
+        <p class="section-eyebrow">Cameron West in the Press</p>
+        <h2 class="section-h2 media-headline">In The Media</h2>
+      </div>
+
+      <!-- Watch -->
+      <p class="media-sub-label">Watch</p>
+      <div class="media-videos-grid">
+
+        <!-- Oprah -->
+        <div class="media-video-item fade-up">
+          <div class="video-embed-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/6nfoyoTxpn0"
+              title="Cameron West on Oprah's Where Are They Now?"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="media-caption">Cam and Rikki appear on Oprah's Where Are They Now?</p>
+        </div>
+
+        <!-- KATU -->
+        <div class="media-video-item fade-up" style="transition-delay:0.12s">
+          <a class="media-link-card"
+             href="https://katu.com/amnw/am-northwest-books-authors/cameron-rikki-west-share-25th-anniversary-edition-of-first-person-plural"
+             target="_blank" rel="noopener">
+            <span class="media-outlet-badge">KATU &middot; AM Northwest</span>
+            <p class="media-link-card-title">Cameron &amp; Rikki West Share the 25th Anniversary Edition of <em>First Person Plural</em></p>
+            <span class="media-link-btn">Watch the Feature &rarr;</span>
+          </a>
+          <p class="media-caption">Cam and Rikki on AM Northwest with Helen Raptis</p>
+        </div>
+
+      </div><!-- /media-videos-grid -->
+
+      <!-- Essays -->
+      <p class="media-sub-label">Essays</p>
+      <div class="essays-grid fade-up">
+
+        <a class="essay-card"
+           href="https://katiecouric.com/health/mental-health/what-is-dissociative-identity-disorder-like-personal-essay/"
+           target="_blank" rel="noopener">
+          <span class="essay-outlet">Katie Couric Media</span>
+          <p class="essay-title">What Is Dissociative Identity Disorder Like? A Personal Essay</p>
+          <span class="essay-link">Read Essay &rarr;</span>
+        </a>
+
+        <a class="essay-card"
+           href="https://www.newsweek.com/dissociative-identity-disorder-cameron-west-11551919"
+           target="_blank" rel="noopener">
+          <span class="essay-outlet">Newsweek</span>
+          <p class="essay-title">A Deeply Personal Account of the Day a New Alter Personality Emerged</p>
+          <span class="essay-link">Read Essay &rarr;</span>
+        </a>
+
+      </div><!-- /essays-grid -->
+
+      <!-- Coming Soon -->
+      <p class="media-sub-label coming-soon">Coming Soon</p>
+      <ul class="coming-soon-list">
+        <li>Essay in Psychology Today</li>
+        <li>Interview in The Hollywood Reporter</li>
+        <li>Interview in The New York Post</li>
+      </ul>
+
+    </div><!-- /media-inner -->
   </section>
 
   <hr class="section-rule" />
@@ -1443,20 +1707,6 @@
       </div>
     </div>
   </section>
-
-  <hr class="section-rule" />
-
-  <!-- ========== PULL QUOTE ========== -->
-  <section id="pullquote">
-    <div class="pullquote-inner fade-up">
-      <span class="pullquote-mark">&#8220;</span>
-      <p class="pullquote-text">"Fascinating&hellip; I hope you'll read it!"</p>
-      <div class="pullquote-rule"></div>
-      <p class="pullquote-attr">— Oprah Winfrey</p>
-    </div>
-  </section>
-
-  <hr class="section-rule" />
 
   <!-- ========== EPILOGUE CLOSING ========== -->
   <div class="epilogue-closing">
@@ -1552,7 +1802,7 @@
     /* ----------------------------------------
        ACTIVE NAV LINK ON SCROLL
     ---------------------------------------- */
-    const navSections  = ['home'];
+    const navSections  = ['home', 'media'];
     const navAnchors   = {};
     navSections.forEach(id => {
       navAnchors[id] = document.querySelector('.nav-links a[href="#' + id + '"]');
