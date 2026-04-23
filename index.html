@@ -1258,25 +1258,33 @@
       text-align: center;
     }
     .media-link-card {
-      aspect-ratio: 16 / 9;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 1rem;
       background: var(--color-bg);
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
-      padding: 2rem 1.75rem;
+      overflow: hidden;
       text-decoration: none;
-      transition: border-color var(--transition), background var(--transition);
+      transition: border-color var(--transition);
       color: inherit;
     }
     .media-link-card:hover {
       border-color: var(--color-accent);
-      background: rgba(196,128,90,0.04);
       color: inherit;
+    }
+    .media-link-card-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+    .media-link-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-start;
+      flex: 1;
     }
     .media-outlet-badge {
       font-family: 'Cinzel', serif;
@@ -1290,10 +1298,11 @@
     }
     .media-link-card-title {
       font-family: 'Oswald', sans-serif;
-      font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
       font-weight: 600;
       color: var(--color-text);
       line-height: 1.35;
+      text-align: left;
     }
     .media-link-card-title em { font-style: italic; color: var(--color-accent); }
     .media-link-btn {
@@ -1305,6 +1314,7 @@
       padding: 0.5rem 1.25rem;
       border: 1px solid rgba(196,128,90,0.4);
       border-radius: var(--radius);
+      margin-top: auto;
       transition: background var(--transition), color var(--transition), border-color var(--transition);
     }
     .media-link-card:hover .media-link-btn {
@@ -1323,16 +1333,29 @@
       border: 1px solid var(--color-border);
       border-top: 3px solid var(--color-accent);
       border-radius: var(--radius);
-      padding: 1.75rem;
+      padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      overflow: hidden;
       text-decoration: none;
       transition: border-color var(--transition), background var(--transition);
     }
     .essay-card:hover {
       border-color: var(--color-accent);
       background: rgba(196,128,90,0.04);
+    }
+    .essay-card-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+    .essay-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex: 1;
     }
     .essay-outlet {
       font-family: 'Cinzel', serif;
@@ -1387,7 +1410,7 @@
     @media (max-width: 768px) {
       .media-videos-grid { grid-template-columns: 1fr; }
       .essays-grid       { grid-template-columns: 1fr; }
-      .media-link-card   { aspect-ratio: auto; min-height: 200px; }
+      .media-link-card-img { aspect-ratio: 4 / 3; }
     }
   </style>
 </head>
@@ -1645,9 +1668,13 @@
           <a class="media-link-card"
              href="https://katu.com/amnw/am-northwest-books-authors/cameron-rikki-west-share-25th-anniversary-edition-of-first-person-plural"
              target="_blank" rel="noopener">
-            <span class="media-outlet-badge">KATU &middot; AM Northwest</span>
-            <p class="media-link-card-title">Cameron &amp; Rikki West Share the 25th Anniversary Edition of <em>First Person Plural</em></p>
-            <span class="media-link-btn">Watch the Feature &rarr;</span>
+            <img class="media-link-card-img" src="img/media-katu.jpg"
+                 alt="Cameron and Rikki West on AM Northwest with Helen Raptis" loading="lazy" />
+            <div class="media-link-card-body">
+              <span class="media-outlet-badge">KATU &middot; AM Northwest</span>
+              <p class="media-link-card-title">Cameron &amp; Rikki West Share the 25th Anniversary Edition of <em>First Person Plural</em></p>
+              <span class="media-link-btn">Watch the Feature &rarr;</span>
+            </div>
           </a>
           <p class="media-caption">Cam and Rikki on AM Northwest with Helen Raptis</p>
         </div>
@@ -1661,17 +1688,25 @@
         <a class="essay-card"
            href="https://katiecouric.com/health/mental-health/what-is-dissociative-identity-disorder-like-personal-essay/"
            target="_blank" rel="noopener">
-          <span class="essay-outlet">Katie Couric Media</span>
-          <p class="essay-title">What Is Dissociative Identity Disorder Like? A Personal Essay</p>
-          <span class="essay-link">Read Essay &rarr;</span>
+          <img class="essay-card-img" src="img/media-katiecouric.png"
+               alt="Illustration for DID personal essay — Katie Couric Media" loading="lazy" />
+          <div class="essay-card-body">
+            <span class="essay-outlet">Katie Couric Media</span>
+            <p class="essay-title">What Is Dissociative Identity Disorder Like? A Personal Essay</p>
+            <span class="essay-link">Read Essay &rarr;</span>
+          </div>
         </a>
 
         <a class="essay-card"
            href="https://www.newsweek.com/dissociative-identity-disorder-cameron-west-11551919"
            target="_blank" rel="noopener">
-          <span class="essay-outlet">Newsweek</span>
-          <p class="essay-title">A Deeply Personal Account of the Day a New Alter Personality Emerged</p>
-          <span class="essay-link">Read Essay &rarr;</span>
+          <img class="essay-card-img" src="img/media-newsweek.jpg"
+               alt="Cameron West — author headshot, photo by Rikki West" loading="lazy" />
+          <div class="essay-card-body">
+            <span class="essay-outlet">Newsweek</span>
+            <p class="essay-title">A Deeply Personal Account of the Day a New Alter Personality Emerged</p>
+            <span class="essay-link">Read Essay &rarr;</span>
+          </div>
         </a>
 
       </div><!-- /essays-grid -->
