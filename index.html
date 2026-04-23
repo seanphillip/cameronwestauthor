@@ -1230,7 +1230,7 @@
       background: var(--color-border);
     }
     .media-sub-label.coming-soon {
-      color: var(--color-text);
+      color: var(--color-accent);
     }
     .media-videos-grid {
       display: grid;
@@ -1386,24 +1386,59 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-    .coming-soon-list li {
+    .coming-soon-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-accent);
+      padding: 1.25rem 1.75rem;
+      border-radius: var(--radius);
+    }
+    .coming-soon-item-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .coming-soon-type {
       font-family: 'Cinzel', serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      opacity: 0.8;
+    }
+    .coming-soon-outlet {
+      font-family: var(--font-heading);
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--color-text);
-      opacity: 0.75;
-      padding-left: 1.5rem;
-      position: relative;
     }
-    .coming-soon-list li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
+    .coming-soon-badge {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       color: var(--color-accent);
-      opacity: 0.9;
+      border: 1px solid rgba(196,128,90,0.45);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    @media (max-width: 500px) {
+      .coming-soon-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
     }
     @media (max-width: 768px) {
       .media-videos-grid { grid-template-columns: 1fr; }
@@ -1712,9 +1747,27 @@
       <!-- Coming Soon -->
       <p class="media-sub-label coming-soon">Coming Soon</p>
       <ul class="coming-soon-list">
-        <li>Essay in Psychology Today</li>
-        <li>Interview in The Hollywood Reporter</li>
-        <li>Interview in The New York Post</li>
+        <li class="coming-soon-item fade-up">
+          <div class="coming-soon-item-meta">
+            <span class="coming-soon-type">Essay</span>
+            <span class="coming-soon-outlet">Psychology Today</span>
+          </div>
+          <span class="coming-soon-badge">Coming Soon</span>
+        </li>
+        <li class="coming-soon-item fade-up" style="transition-delay:0.08s">
+          <div class="coming-soon-item-meta">
+            <span class="coming-soon-type">Interview</span>
+            <span class="coming-soon-outlet">The Hollywood Reporter</span>
+          </div>
+          <span class="coming-soon-badge">Coming Soon</span>
+        </li>
+        <li class="coming-soon-item fade-up" style="transition-delay:0.16s">
+          <div class="coming-soon-item-meta">
+            <span class="coming-soon-type">Interview</span>
+            <span class="coming-soon-outlet">The New York Post</span>
+          </div>
+          <span class="coming-soon-badge">Coming Soon</span>
+        </li>
       </ul>
 
     </div><!-- /media-inner -->
