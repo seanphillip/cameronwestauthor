@@ -1382,6 +1382,14 @@
       margin-top: auto;
     }
     .essay-card:hover .essay-link { color: var(--color-text); }
+    .media-card-type {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      opacity: 0.8;
+    }
     .coming-soon-list {
       list-style: none;
       display: flex;
@@ -1747,6 +1755,25 @@
 
       </div><!-- /essays-grid -->
 
+      <!-- Interviews -->
+      <p class="media-sub-label">Interviews</p>
+      <div class="essays-grid fade-up">
+
+        <a class="essay-card"
+           href="https://www.hollywoodreporter.com/movies/movie-news/robin-williams-lost-movie-role-1236588092/"
+           target="_blank" rel="noopener">
+          <img class="essay-card-img" src="https://www.hollywoodreporter.com/wp-content/uploads/2026/05/GettyImages-952428362.jpg"
+               alt="The Hollywood Reporter — Robin Williams interview" loading="lazy" />
+          <div class="essay-card-body">
+            <span class="media-card-type">Interview</span>
+            <span class="essay-outlet">The Hollywood Reporter</span>
+            <p class="essay-title">Robin Williams&rsquo; Lost Movie Role, Revisited</p>
+            <span class="essay-link">Read the Interview &rarr;</span>
+          </div>
+        </a>
+
+      </div><!-- /interviews-grid -->
+
       <!-- Coming Soon -->
       <p class="media-sub-label coming-soon">Coming Soon</p>
       <ul class="coming-soon-list">
@@ -1758,13 +1785,6 @@
           <span class="coming-soon-badge">Coming Soon</span>
         </li>
         <li class="coming-soon-item fade-up" style="transition-delay:0.08s">
-          <div class="coming-soon-item-meta">
-            <span class="coming-soon-type">Interview</span>
-            <span class="coming-soon-outlet">The Hollywood Reporter</span>
-          </div>
-          <span class="coming-soon-badge">Coming Soon</span>
-        </li>
-        <li class="coming-soon-item fade-up" style="transition-delay:0.16s">
           <div class="coming-soon-item-meta">
             <span class="coming-soon-type">Interview</span>
             <span class="coming-soon-outlet">The New York Post</span>
