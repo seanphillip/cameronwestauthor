@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Works — Cameron West &amp; Rikki West</title>
+  <meta name="description" content="Current IP portfolio from Cameron West and Rikki West — the Reb Barnett thriller series, First Person Plural, and The Remarkable Mind(s) of Bo Sender." />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg:         #0A0A0A;
+      --color-surface:    #141210;
+      --color-border:     #2E2B28;
+      --color-text:       #F0EDE8;
+      --color-text-muted: #D4C5B5;
+      --color-accent:     #C4805A;
+      --color-accent-dark:#8B6F5E;
+      --font-display:     'Playfair Display', Georgia, serif;
+      --font-body:        'Lora', Georgia, serif;
+      --font-label:       'Cinzel', serif;
+      --font-heading:     'Oswald', sans-serif;
+      --max-width:        1100px;
+      --gutter:           clamp(1.5rem, 5vw, 4rem);
+      --transition:       0.35s ease;
+      --radius:           4px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: "DM Sans", sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { color: var(--color-text); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(10,10,10,0.97);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav-logo {
+      font-family: var(--font-label);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--color-accent);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--color-accent); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--color-accent); }
+    .nav-links a.active::after { width: 100%; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--color-text);
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(10,10,10,0.97);
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .nav-links.open a {
+      font-family: var(--font-label);
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+    .nav-links.open a:hover { color: var(--color-accent); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 8rem var(--gutter) 4rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .page-eyebrow {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .page-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 2rem; height: 1px;
+      background: var(--color-accent);
+    }
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    .page-intro {
+      color: var(--color-text-muted);
+      max-width: 640px;
+      font-size: 1.05rem;
+      font-family: var(--font-body);
+      font-style: italic;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem var(--gutter) 4rem;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      margin-top: 5rem;
+    }
+    .section-label:first-child { margin-top: 0; }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* ── SERIES HEADER ── */
+    .series-header {
+      margin-bottom: 3rem;
+    }
+    .series-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text);
+      margin-bottom: 0.9rem;
+    }
+    .series-desc {
+      font-family: var(--font-body);
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      max-width: 760px;
+      font-size: 0.98rem;
+    }
+    .series-byline {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-top: 0.75rem;
+    }
+
+    /* ── PROPERTY CARDS ── */
+    .property-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .property-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-accent);
+      border-radius: var(--radius);
+      padding: 2.25rem 2.75rem;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .property-card:hover {
+      border-color: var(--color-accent);
+      background: rgba(196,128,90,0.03);
+    }
+    .property-card--featured {
+      padding: 2.75rem 3rem;
+    }
+    .property-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .property-genre {
+      font-family: var(--font-label);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      opacity: 0.85;
+    }
+    .property-status {
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      border: 1px solid rgba(196,128,90,0.4);
+      border-radius: 999px;
+      padding: 0.25rem 0.9rem;
+      white-space: nowrap;
+    }
+    .property-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-text);
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
+    }
+    .property-title em {
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .property-card--featured .property-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    }
+    .property-desc {
+      font-family: var(--font-body);
+      color: var(--color-text-muted);
+      line-height: 1.85;
+      max-width: 800px;
+      font-size: 0.97rem;
+    }
+    .property-desc + .property-desc {
+      margin-top: 0.9rem;
+    }
+    .property-note {
+      margin-top: 1.25rem;
+      font-family: var(--font-body);
+      font-style: italic;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* ── REPRESENTATION ── */
+    .rep-block {
+      margin-top: 5rem;
+      padding: 2.5rem 3rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-top: 3px solid var(--color-accent);
+      border-radius: var(--radius);
+      max-width: 680px;
+    }
+    .rep-label {
+      font-family: var(--font-label);
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.25rem;
+    }
+    .rep-name {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text);
+      margin-bottom: 0.3rem;
+    }
+    .rep-agency {
+      font-family: var(--font-label);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .rep-desc {
+      font-family: var(--font-body);
+      color: var(--color-text-muted);
+      font-size: 0.93rem;
+      line-height: 1.8;
+    }
+    .rep-email {
+      display: inline-block;
+      margin-top: 1.1rem;
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--color-accent);
+      border-bottom: 1px solid rgba(196,128,90,0.35);
+      padding-bottom: 2px;
+      transition: color var(--transition), border-color var(--transition);
+    }
+    .rep-email:hover {
+      color: var(--color-text);
+      border-color: var(--color-text);
+    }
+
+    /* ── BACK LINK ── */
+    .back-link-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem var(--gutter) 4rem;
+    }
+    .back-link {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--color-accent); }
+    .back-link::before { content: '←'; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(to bottom, var(--color-bg), #050505);
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+      opacity: 0.4;
+    }
+    .footer-name {
+      font-family: var(--font-label);
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.25rem;
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav a {
+      font-family: var(--font-label);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-nav a:hover { color: var(--color-accent); }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      opacity: 0.55;
+    }
+
+    /* ── FADE UP ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .property-card { padding: 1.75rem; }
+      .property-card--featured { padding: 2rem; }
+      .rep-block { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Cameron West</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications">Publications</a></li>
+      <li><a href="the-works" class="active">The Works</a></li>
+      <li><a href="resources">Resources</a></li>
+      <li><a href="bookclub">Book Club</a></li>
+      <li><a href="qa">Q&amp;A</a></li>
+      <li><a href="contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header fade-up">
+    <p class="page-eyebrow">West &amp; West</p>
+    <h1 class="page-title">The Works</h1>
+    <p class="page-intro">Current IP portfolio — fiction, nonfiction, and properties in development.</p>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ── THE REB BARNETT SERIES ── -->
+    <p class="section-label fade-up">The Reb Barnett Thriller Series</p>
+
+    <div class="series-header fade-up">
+      <h2 class="series-title">Reb Barnett</h2>
+      <p class="series-desc">Reb Barnett is a 38-year-old A-list Hollywood stuntman — sharper, quicker, and more wounded than anybody in the room. The series combines high-concept thriller plotting, Hollywood access, political intrigue, and a singular first-person voice.</p>
+      <p class="series-byline">Written by Cameron West and Rikki West</p>
+    </div>
+
+    <div class="property-stack">
+
+      <article class="property-card fade-up">
+        <div class="property-meta">
+          <span class="property-genre">Political &middot; Technology Thriller</span>
+          <span class="property-status">Manuscript Complete &mdash; Under Submission</span>
+        </div>
+        <h3 class="property-title">Futurecard</h3>
+        <p class="property-desc">A credit card conspiracy collides with a presidential election as stuntman Reb Barnett uncovers a hidden behavioral-manipulation program beneath a global financial rollout.</p>
+      </article>
+
+      <article class="property-card fade-up">
+        <div class="property-meta">
+          <span class="property-genre">Commercial Thriller &middot; Prequel</span>
+          <span class="property-status">Published &mdash; Simon &amp; Schuster</span>
+        </div>
+        <h3 class="property-title">The Medici Dagger</h3>
+        <p class="property-desc">Previously optioned twice by Tom Cruise and Paramount Pictures. The novel established Reb Barnett as an expandable commercial thriller franchise for both publishing and screen adaptation.</p>
+      </article>
+
+      <article class="property-card fade-up">
+        <div class="property-meta">
+          <span class="property-genre">Commercial Thriller &middot; In Development</span>
+          <span class="property-status">IP Materials Complete</span>
+        </div>
+        <h3 class="property-title">Reflex</h3>
+        <p class="property-desc">A covert human-enhancement program with national security implications draws Reb Barnett into a conspiracy reaching the White House. Synopsis and IP presentation materials complete.</p>
+      </article>
+
+    </div>
+
+    <!-- ── FIRST PERSON PLURAL ── -->
+    <p class="section-label fade-up">Memoir &amp; Nonfiction</p>
+
+    <div class="property-stack">
+      <article class="property-card property-card--featured fade-up">
+        <div class="property-meta">
+          <span class="property-genre">Memoir &middot; Limited Series Potential</span>
+          <span class="property-status">25th Anniversary Edition &mdash; May 2026</span>
+        </div>
+        <h3 class="property-title">First Person <em>Plural</em>: My Life as a Multiple</h3>
+        <p class="property-desc"><em>First Person Plural</em> became a New York Times bestseller following its original publication and was published internationally in more than twenty countries. The memoir was acquired by Disney in a seven-figure deal with Robin Williams attached to star and Eric Roth attached to adapt.</p>
+        <p class="property-desc">The expanded 25th Anniversary Edition will be released May 26, 2026 by Blackstone Publishing in hardcover, paperback, e-book, and audiobook formats.</p>
+        <p class="property-note">Featured by The Hollywood Reporter in May 2026 in connection with renewed industry interest in adaptation as a premium dramatic series. The new edition has prompted essays, news coverage, and interviews in The New York Post, Psychology Today, Katie Couric Media, and Newsweek.</p>
+      </article>
+    </div>
+
+    <!-- ── YA / CROSSOVER ── -->
+    <p class="section-label fade-up">Young Adult &amp; Crossover Fiction</p>
+
+    <div class="property-stack">
+      <article class="property-card property-card--featured fade-up">
+        <div class="property-meta">
+          <span class="property-genre">Contemporary YA &middot; Crossover Fiction</span>
+          <span class="property-status">Complete Manuscript</span>
+        </div>
+        <h3 class="property-title">The Remarkable Mind(s) of Bo Sender</h3>
+        <p class="property-desc">Written by Cameron West and Rikki West. Sixteen-year-old gifted guitarist Bo Sender leaves behind the life that defined her &mdash; &ldquo;the girl from the Cadillac Laundry&rdquo; &mdash; and heads up California&rsquo;s Central Coast determined to create a future through music on her own terms. As Bo begins forming fragile new relationships in San Luis Obispo and Shell Beach, long-buried fractures within her mind begin surfacing, forcing her to confront the Dissociative Identity Disorder created by severe childhood trauma.</p>
+        <p class="property-desc">The novel combines literary emotional depth, music culture, found family, and psychological realism in a coming-of-age story grounded in Cameron West&rsquo;s lived experience as the subject of <em>First Person Plural</em> &mdash; the New York Times bestselling memoir originally acquired by Disney in a seven-figure deal with Robin Williams attached to star and Eric Roth attached to adapt.</p>
+        <p class="property-note">Dissociative Identity Disorder affects tens of millions worldwide. <em>The Remarkable Mind(s) of Bo Sender</em> brings a rare level of authenticity and lived authority to the portrayal of a young multiple in contemporary fiction. Complete manuscript available with long-form series potential.</p>
+      </article>
+    </div>
+
+    <!-- ── REPRESENTATION ── -->
+    <div class="rep-block fade-up">
+      <p class="rep-label">Representation</p>
+      <p class="rep-name">Laurie Fox</p>
+      <p class="rep-agency">Linda Chester Literary Agency</p>
+      <p class="rep-desc">Adult fiction and nonfiction represented by Laurie Fox at the Linda Chester Literary Agency. Publishing, film, television, and YA literary representation inquiries regarding all West &amp; West properties should be directed to Laurie Fox.</p>
+      <a class="rep-email" href="mailto:laurie@lindachester.com">laurie@lindachester.com</a>
+    </div>
+
+  </main>
+
+  <!-- BACK LINK -->
+  <div class="back-link-wrap">
+    <a class="back-link" href="index.html">Back to Home</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-name">Cameron West</p>
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications">Publications</a></li>
+      <li><a href="the-works">The Works</a></li>
+      <li><a href="resources">Resources</a></li>
+      <li><a href="bookclub">Book Club</a></li>
+      <li><a href="qa">Q&amp;A</a></li>
+      <li><a href="contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Cameron West. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
+  </script>
+
+</body>
+</html>
