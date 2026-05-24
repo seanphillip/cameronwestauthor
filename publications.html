@@ -127,11 +127,13 @@
       background: rgba(10,10,10,0.97);
       align-items: center;
       justify-content: center;
-      gap: 2.5rem;
+      gap: clamp(0.75rem, 2.5vh, 2.5rem);
+      padding: 2rem 0;
+      overflow-y: auto;
     }
     .nav-links.open a {
-      font-family: var(--font-label);
-      font-size: 1.3rem;
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.9rem, 2.2vh, 1.3rem);
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--color-text-muted);
