@@ -54,7 +54,7 @@
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mobile-nav { display: none; position: fixed; inset: 0; background: var(--color-bg); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: clamp(0.75rem, 2.5vh, 2.5rem); padding: 2rem 0; overflow-y: auto; }
     .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-family: 'Cinzel', serif; font-size: clamp(0.9rem, 2.2vh, 1.3rem); letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text); text-decoration: none; }
+    .mobile-nav a { font-family: 'Cinzel', serif; font-size: clamp(0.9rem, 2.2vh, 1.3rem); letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none; }
     @media (max-width: 680px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -123,6 +123,7 @@
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
     <a href="publications.html">Publications</a>
+    <a href="the-works">In the Works</a>
     <a href="resources.html">Resources</a>
     <a href="bookclub">Book Club</a>
     <a href="qa.html">Q&amp;A</a>
