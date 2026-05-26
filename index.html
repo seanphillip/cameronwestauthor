@@ -29,7 +29,11 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:wght@300&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:wght@300&family=Cinzel:wght@400;600&display=swap" />
+
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:wght@300&family=Cinzel:wght@400;600&display=swap" />
+
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:wght@300&family=Cinzel:wght@400;600&display=swap" /></noscript>
 
   <style>
     /* ========================================
@@ -1522,9 +1526,12 @@
 
       <!-- Right: Cover -->
       <div class="hero-cover-wrap fade-up" style="transition-delay:0.15s">
-        <img src="img/firstpersonplural.png"
-             alt="First Person Plural — Book Cover"
-             class="hero-cover" />
+        <picture>
+          <source srcset="img/FPP.webp" type="image/webp">
+          <img src="img/FPP.png"
+               alt="First Person Plural — Book Cover"
+               class="hero-cover" />
+        </picture>
       </div>
     </div>
   </section>
@@ -1568,9 +1575,12 @@
         <!-- Featured: First Person Plural -->
         <div class="book-card fade-up">
           <div class="book-card-inner">
-            <img src="img/firstpersonplural.png"
-                 alt="First Person Plural cover"
-                 class="book-cover-thumb" loading="lazy" />
+            <picture>
+              <source srcset="img/FPP-cover-medium.webp" type="image/webp">
+              <img src="img/FPP-cover-medium.png"
+                   alt="First Person Plural cover"
+                   class="book-cover-thumb" loading="lazy" />
+            </picture>
             <div class="book-info">
               <span class="book-tag">★ Featured — 25th Anniversary Edition</span>
               <h3 class="book-title">First Person Plural<br><span style="font-size:0.65em;font-weight:400;letter-spacing:0.04em;color:var(--color-text-muted);">My Life as a Multiple</span></h3>
