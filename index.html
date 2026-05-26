@@ -27,12 +27,16 @@
   <link rel="apple-touch-icon" href="/favicon.ico">
 
   <!-- Preload LCP hero image -->
-  <link rel="preload" as="image" href="img/FPP.webp" type="image/webp" fetchpriority="high" />
+  <link rel="preload" as="image"
+        href="img/FPP-360.webp"
+        imagesrcset="img/FPP-360.webp 360w, img/FPP.webp 598w"
+        imagesizes="(max-width: 768px) 260px, 360px"
+        type="image/webp" fetchpriority="high" />
 
-  <!-- Fonts (self-hosted) -->
-  <link rel="preload" as="style" href="/fonts/fonts.css" />
-  <link rel="stylesheet" media="print" onload="this.media='all'" href="/fonts/fonts.css" />
-  <noscript><link rel="stylesheet" href="/fonts/fonts.css" /></noscript>
+  <!-- Fonts (self-hosted, index-only subset) -->
+  <link rel="preload" as="style" href="/fonts/fonts-index.css" />
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="/fonts/fonts-index.css" />
+  <noscript><link rel="stylesheet" href="/fonts/fonts-index.css" /></noscript>
 
   <style>
     /* ========================================
@@ -1552,7 +1556,9 @@
       <!-- Right: Cover — no fade-up so the browser can use it as LCP immediately -->
       <div class="hero-cover-wrap">
         <picture>
-          <source srcset="img/FPP.webp" type="image/webp">
+          <source type="image/webp"
+                  srcset="img/FPP-360.webp 360w, img/FPP.webp 598w"
+                  sizes="(max-width: 768px) 260px, 360px">
           <img src="img/FPP.png"
                alt="First Person Plural — Book Cover"
                class="hero-cover"
