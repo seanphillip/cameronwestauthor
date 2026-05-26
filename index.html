@@ -598,6 +598,32 @@
       height: 100%;
       border: none;
     }
+    .video-facade {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      background: #000;
+    }
+    .video-facade img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .video-facade:hover img { opacity: 1; }
+    .video-facade-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      pointer-events: none;
+    }
 
     /* ========================================
        REVIEWS
@@ -1534,6 +1560,7 @@
           <img src="img/FPP.png"
                alt="First Person Plural — Book Cover"
                class="hero-cover"
+               width="598" height="961"
                fetchpriority="high" />
         </picture>
       </div>
@@ -1583,7 +1610,8 @@
               <source srcset="img/FPP-cover-medium.webp" type="image/webp">
               <img src="img/FPP-cover-medium.png"
                    alt="First Person Plural cover"
-                   class="book-cover-thumb" loading="lazy" />
+                   class="book-cover-thumb" loading="lazy"
+                   width="488" height="732" />
             </picture>
             <div class="book-info">
               <span class="book-tag">★ Featured — 25th Anniversary Edition</span>
@@ -1717,12 +1745,14 @@
         <!-- Oprah -->
         <div class="media-video-item fade-up">
           <div class="video-embed-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/6nfoyoTxpn0"
-              title="Cameron West on Oprah's Where Are They Now?"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+            <div class="video-facade" data-video-id="6nfoyoTxpn0">
+              <img src="img/oprah-video-thumb.jpg"
+                   alt="Cameron West on Oprah's Where Are They Now? — click to play"
+                   width="480" height="360" loading="lazy" />
+              <button class="video-facade-play" aria-label="Play video">
+                <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+              </button>
+            </div>
           </div>
           <div class="media-link-card-body" style="padding-left:0;padding-right:0;">
             <span class="media-outlet-badge">Oprah Winfrey</span>
@@ -1737,7 +1767,8 @@
              href="https://katu.com/amnw/am-northwest-books-authors/cameron-rikki-west-share-25th-anniversary-edition-of-first-person-plural"
              target="_blank" rel="noopener">
             <img class="media-link-card-img" src="img/media-katu.webp"
-                 alt="Cameron and Rikki West on AM Northwest with Helen Raptis" loading="lazy" />
+                 alt="Cameron and Rikki West on AM Northwest with Helen Raptis"
+                 width="1196" height="669" loading="lazy" />
             <div class="media-link-card-body">
               <span class="media-outlet-badge">KATU &middot; AM Northwest</span>
               <p class="media-link-card-title">Cameron &amp; Rikki West Share the 25th Anniversary Edition of <em>First Person Plural</em></p>
@@ -1776,7 +1807,8 @@
            href="https://katiecouric.com/health/mental-health/what-is-dissociative-identity-disorder-like-personal-essay/"
            target="_blank" rel="noopener">
           <img class="essay-card-img" src="img/media-katiecouric.webp"
-               alt="Illustration for DID personal essay — Katie Couric Media" loading="lazy" />
+               alt="Illustration for DID personal essay — Katie Couric Media"
+               width="1410" height="870" loading="lazy" />
           <div class="essay-card-body">
             <span class="essay-outlet">Katie Couric Media</span>
             <p class="essay-title">What Is Dissociative Identity Disorder Like? A Personal Essay</p>
@@ -1788,7 +1820,8 @@
            href="https://www.newsweek.com/dissociative-identity-disorder-cameron-west-11551919"
            target="_blank" rel="noopener">
           <img class="essay-card-img" src="img/media-newsweek-2.webp"
-               alt="Cameron West — author headshot, photo by Rikki West" loading="lazy" />
+               alt="Cameron West — author headshot, photo by Rikki West"
+               width="828" height="544" loading="lazy" />
           <div class="essay-card-body">
             <span class="essay-outlet">Newsweek</span>
             <p class="essay-title">A Deeply Personal Account of the Day a New Alter Personality Emerged</p>
@@ -1827,7 +1860,8 @@
     <div class="about-grid">
       <div class="about-photo-wrap fade-up">
         <img src="img/cameron_west_headshot.png"
-             alt="Cameron West" class="about-photo" loading="lazy" />
+             alt="Cameron West" class="about-photo"
+             width="450" height="586" loading="lazy" />
       </div>
       <div class="about-body fade-up" style="transition-delay:0.1s">
         <p class="about-eyebrow">About the Author</p>
@@ -2054,6 +2088,22 @@
 
     const statsSection = document.getElementById('stats');
     if (statsSection) statsObserver.observe(statsSection);
+
+    /* ----------------------------------------
+       YOUTUBE FACADE — load player on click
+    ---------------------------------------- */
+    document.querySelectorAll('.video-facade').forEach(facade => {
+      facade.addEventListener('click', () => {
+        const id = facade.dataset.videoId;
+        const wrap = facade.parentElement;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+        iframe.title = 'Video player';
+        iframe.allow = 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        facade.replaceWith(iframe);
+      }, { once: true });
+    });
 
     /* ----------------------------------------
        GOOGLE ANALYTICS (preserved)
