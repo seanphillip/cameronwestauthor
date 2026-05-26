@@ -26,6 +26,9 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.ico">
 
+  <!-- Preload LCP hero image -->
+  <link rel="preload" as="image" href="img/FPP.webp" type="image/webp" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1524,13 +1527,14 @@
         </div>
       </div>
 
-      <!-- Right: Cover -->
-      <div class="hero-cover-wrap fade-up" style="transition-delay:0.15s">
+      <!-- Right: Cover — no fade-up so the browser can use it as LCP immediately -->
+      <div class="hero-cover-wrap">
         <picture>
           <source srcset="img/FPP.webp" type="image/webp">
           <img src="img/FPP.png"
                alt="First Person Plural — Book Cover"
-               class="hero-cover" />
+               class="hero-cover"
+               fetchpriority="high" />
         </picture>
       </div>
     </div>
